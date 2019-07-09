@@ -1,0 +1,13 @@
+{
+	"extends": "eslint-config-bamboo",
+	"compilerOptions": {
+		"sourceMap": true,
+		"declaration": true,
+		"removeComments": false,
+		"outDir": "./dist",
+		"types": ["tape"]
+	},
+	"include": [
+		"./src/**/*"
+	]
+}

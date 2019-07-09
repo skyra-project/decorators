@@ -1,0 +1,32 @@
+{
+  "name": "klasa-decorators",
+  "version": "0.0.1",
+  "description": "TypeScript decorators for Klasa",
+  "main": "dist/index.js",
+  "repository": "https://github.com/kyranet/klasa-decorators",
+  "author": "kyranet <kyradiscord@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "prepublishOnly": "yarn build",
+    "build:browser": "webpack",
+    "lint": "eslint --ext ts src --fix",
+    "test:lint": "eslint --ext ts src",
+    "test": "yarn build && node dist/test/suite.js",
+    "test:azure": "yarn build && node dist/test/suite.js | tap-xunit --package=\"klasa-decorators\" > test.xml",
+    "build": "tsc -p .",
+    "watch": "tsc -p . -w"
+  },
+  "devDependencies": {
+    "@types/tape": "^4.2.33",
+    "@typescript-eslint/eslint-plugin": "^1.11.0",
+    "@typescript-eslint/parser": "^1.11.0",
+    "eslint": "^6.0.1",
+    "eslint-config-bamboo": "^1.3.0",
+    "tape": "^4.11.0",
+    "typescript": "^3.5.3"
+  },
+  "peerDependencies": {
+    "klasa": "dirigeants/klasa"
+  }
+}
