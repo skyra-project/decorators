@@ -36,13 +36,13 @@ export function createMethodDecorator(fn: MethodDecorator) {
  *     message.hasAtLeastPermissionLevel(value), fallback);
  * }
  */
-export function createFunctionInhibitor(this: any, inhibitor: Inhibitor, fallback: Fallback = () => undefined) {
+export function createFunctionInhibitor(inhibitor: Inhibitor, fallback: Fallback = () => undefined) {
 	return createMethodDecorator((_target, _propertyKey, descriptor) => {
 		const method = descriptor.value;
 		if (!method) throw new Error('Function inhibitors require a [[value]].');
 		if (typeof method !== 'function') throw new Error('Function inhibitors can only be applied to functions.');
 
-		descriptor.value = (async (...args: any[]) => {
+		descriptor.value = (async function descriptorValue(this: Function, ...args: any[]) {
 			const canRun = await inhibitor(...args);
 			return canRun ? method.call(this, ...args) : fallback.call(this, ...args);
 		}) as unknown as undefined;

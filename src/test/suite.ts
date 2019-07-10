@@ -94,8 +94,7 @@ test('Test DM (Required)', async t => {
 	}
 });
 
-// TODO(kyranet): Fix why `this` isn't being passed correctly.
-test.skip('Custom Function Inhibitor', async t => {
+test('Custom Function Inhibitor', async t => {
 	t.plan(1);
 
 	class Test {
