@@ -4,10 +4,12 @@ package-lock.json
 .idea/
 dist/
 *.js
+!jest.config.js
+!jest.config.ci.js
 *.js.map
 *.tsbuildinfo
 *.tgz
 
-# Test and Coverage results and files
-test.xml
-.nyc_output/
+# Test Coverage
+coverage/
+reports/

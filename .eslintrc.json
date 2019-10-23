@@ -1,9 +1,9 @@
 {
   "extends": "bamboo",
   "rules": {
-	  "@typescript-eslint/unified-signatures": 0
+    "@typescript-eslint/unified-signatures": 0
   },
-  "globals": {
-    "BigInt": true
+  "env": {
+    "jest": true
   }
 }

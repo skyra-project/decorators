@@ -1,8 +1,9 @@
 {
   "name": "klasa-decorators",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "TypeScript decorators for Klasa",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "repository": "https://github.com/kyranet/klasa-decorators",
   "author": "kyranet <kyradiscord@gmail.com>",
   "license": "MIT",
@@ -12,22 +13,28 @@
     "build:browser": "webpack",
     "lint": "eslint --ext ts src --fix",
     "test:lint": "eslint --ext ts src",
-    "test": "yarn build && node dist/test/suite.js",
-    "test:azure": "yarn build && node dist/test/suite.js | tap-xunit --package=\"klasa-decorators\" > test.xml",
-    "build": "tsc -p .",
-    "watch": "tsc -p . -w"
+    "test": "jest",
+    "build": "tsc -p ./tsconfig.build.json",
+    "watch": "tsc -p ./tsconfig.build.json -w"
   },
   "devDependencies": {
-    "@types/tape": "^4.2.33",
+    "@types/jest": "^24.0.19",
+    "@types/ws": "^6.0.3",
     "@typescript-eslint/eslint-plugin": "^1.11.0",
     "@typescript-eslint/parser": "^1.11.0",
+    "discord.js": "github:discordjs/discord.js#master",
     "eslint": "^6.0.1",
     "eslint-config-bamboo": "^2.0.0",
-    "tap-xunit": "^2.4.1",
-    "tape": "^4.11.0",
+    "jest": "^24.9.0",
+    "klasa": "github:dirigeants/klasa#settings",
+    "ts-jest": "^24.1.0",
     "typescript": "^3.5.3"
   },
   "peerDependencies": {
-    "klasa": "dirigeants/klasa"
-  }
+    "discord.js": "github:discordjs/discord.js#master",
+    "klasa": "github:dirigeants/klasa#settings"
+  },
+  "files": [
+    "dist"
+  ]
 }

@@ -1,3 +1,6 @@
+import { PieceOptions, Piece, Store } from 'klasa';
+import { Constructor } from 'discord.js';
+
 /**
  * Utility to make a method decorator with lighter syntax and inferred types.
  * @since 0.0.1
@@ -12,6 +15,31 @@
  */
 export function createMethodDecorator(fn: MethodDecorator) {
 	return fn;
+}
+
+/**
+ * Utility to make a class decorator with lighter syntax and inferred types.
+ * @since 0.0.2
+ * @param fn The class to decorate
+ * @see {@link ApplyOptions}
+ */
+export function createClassDecorator(fn: Function) {
+	return fn;
+}
+
+/**
+ * Decorator function that applies given options to any Klasa piece
+ * @since 0.0.2
+ * @param options The options to pass to the piece constructor
+ */
+export function ApplyOptions<T extends PieceOptions>(options: T) {
+	return createClassDecorator((target: Constructor<Piece>) => class extends target {
+
+		public constructor(store: Store<string, Piece, typeof Piece>, file: string[], directory: string) {
+			super(store, file, directory, options);
+		}
+
+	});
 }
 
 /**
