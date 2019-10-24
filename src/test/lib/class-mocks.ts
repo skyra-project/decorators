@@ -12,7 +12,7 @@ export class Message {
 		this.permission = permission;
 	}
 
-	public async hasAtLeastPermissionLevel(level: number) {
+	public hasAtLeastPermissionLevel(level: number) {
 		return this.permission >= level;
 	}
 

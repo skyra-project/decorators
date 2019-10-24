@@ -1,14 +1,13 @@
-import { createFunctionInhibitor } from '../src';
+import { createFunctionInhibitor } from '../';
+import ava from 'ava';
 
-test('Custom Function Inhibitor', async () => {
-	expect.assertions(1);
-
+ava('Custom Function Inhibitor', async test => {
 	class Test {
 
 		public value = Symbol('Test');
 
 		@createFunctionInhibitor(() => true)
-		public async getValue() {
+		public getValue() {
 			return this.value;
 		}
 
@@ -16,5 +15,5 @@ test('Custom Function Inhibitor', async () => {
 
 	const instance = new Test();
 	const result = await instance.getValue();
-	expect(result).toBe(instance.value);
+	test.is(result, instance.value);
 });
