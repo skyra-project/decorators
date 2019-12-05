@@ -11,33 +11,32 @@
   "scripts": {
     "prepublishOnly": "yarn build",
     "build:browser": "webpack",
-    "lint": "eslint --ext ts src --fix",
-    "test:lint": "eslint --ext ts src",
+    "lint": "eslint --ext ts src test --fix",
+    "test:lint": "eslint --ext ts src test",
     "test": "ava",
-    "build": "tsc -p .",
-    "watch": "tsc -p . -w"
+    "build": "tsc -b src",
+    "watch": "tsc -wb src"
   },
   "devDependencies": {
-    "@types/ws": "^6.0.3",
-    "@typescript-eslint/eslint-plugin": "^2.5.0",
-    "@typescript-eslint/parser": "^2.5.0",
+    "@types/ws": "^6.0.4",
+    "@typescript-eslint/eslint-plugin": "^2.10.0",
+    "@typescript-eslint/parser": "^2.10.0",
     "ava": "^2.4.0",
     "discord.js": "github:discordjs/discord.js#master",
-    "eslint": "^6.5.1",
+    "eslint": "^6.7.2",
     "eslint-config-bamboo": "^3.0.0",
     "klasa": "github:dirigeants/klasa#settings",
-    "source-map-support": "^0.5.13",
-    "ts-node": "^8.4.1",
-    "typescript": "^3.6.4"
+    "source-map-support": "^0.5.16",
+    "ts-node": "^8.5.4",
+    "typescript": "^3.7.3"
   },
   "peerDependencies": {
     "discord.js": "github:discordjs/discord.js#master",
     "klasa": "github:dirigeants/klasa#settings"
   },
   "files": [
-    "dist/index.d.ts",
-    "dist/index.js",
-    "dist/index.js.map"
+    "dist",
+    "!dist/tsconfig.tsbuildinfo"
   ],
   "ava": {
     "compileEnhancements": false,
@@ -45,8 +44,7 @@
       "ts"
     ],
     "files": [
-      "src/test/**/*.ts",
-      "!src/test/lib"
+      "test/**/*.test.ts"
     ],
     "require": [
       "ts-node/register",

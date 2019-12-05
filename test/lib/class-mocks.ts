@@ -1,4 +1,4 @@
-import { Command, KlasaClient, CommandStore } from 'klasa';
+import { Command, CommandStore, KlasaClient } from 'klasa';
 
 export class Message {
 
