@@ -7,3 +7,4 @@ dist/
 *.js.map
 *.tsbuildinfo
 *.tgz
+docs/
