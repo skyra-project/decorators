@@ -1,14 +1,12 @@
 import ava from 'ava';
-import { requiresDMContext } from '../';
+import { requiresDMContext } from '../src';
 import { Guild, Message } from './lib/class-mocks';
 
 class Test {
-
 	@requiresDMContext()
 	public inGuild(message: Message) {
 		return message.guild === null;
 	}
-
 }
 
 const instance = new Test();

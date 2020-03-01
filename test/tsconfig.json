@@ -1,9 +1,7 @@
 {
-    "extends": "../tsconfig.json",
-    "compilerOptions": {
-        "experimentalDecorators": true
-    },
-    "references": [
-        { "path": "../src" }
-    ]
+	"extends": "../tsconfig.json",
+	"compilerOptions": {
+		"experimentalDecorators": true
+	},
+	"references": [{ "path": "../src" }]
 }

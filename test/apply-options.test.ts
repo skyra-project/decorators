@@ -1,7 +1,7 @@
 import ava from 'ava';
 import { Command, CommandOptions } from 'klasa';
-import { ApplyOptions } from '../';
-import { MockCommandStore, MockClient } from './lib/class-mocks';
+import { ApplyOptions } from '../src';
+import { MockClient, MockCommandStore } from './lib/class-mocks';
 
 ava('ApplyOptions Decorator', test => {
 	@ApplyOptions<CommandOptions>({
@@ -9,11 +9,9 @@ ava('ApplyOptions Decorator', test => {
 		cooldown: 10
 	})
 	class TestPiece extends Command {
-
 		public getName() {
 			return this.name;
 		}
-
 	}
 
 	const instance = new TestPiece(new MockCommandStore('name', new MockClient()), [__filename], __dirname);

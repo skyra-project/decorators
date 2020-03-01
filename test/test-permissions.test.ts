@@ -1,14 +1,12 @@
 import ava from 'ava';
-import { requiresPermission } from '../';
+import { requiresPermission } from '../src';
 import { Message } from './lib/class-mocks';
 
 class Test {
-
 	@requiresPermission(5)
 	public getContent(message: Message) {
 		return message.content;
 	}
-
 }
 
 ava('Test Permissions (Existent)', async test => {

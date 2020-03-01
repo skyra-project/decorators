@@ -1,5 +1,5 @@
-import { PieceOptions, Piece, Store } from 'klasa';
 import { Constructor } from 'discord.js';
+import { Piece, PieceOptions, Store } from 'klasa';
 
 /**
  * Utility to make a method decorator with lighter syntax and inferred types.
@@ -33,13 +33,14 @@ export function createClassDecorator(fn: Function) {
  * @param options The options to pass to the piece constructor
  */
 export function ApplyOptions<T extends PieceOptions>(options: T) {
-	return createClassDecorator((target: Constructor<Piece>) => class extends target {
-
-		public constructor(store: Store<string, Piece, typeof Piece>, file: string[], directory: string) {
-			super(store, file, directory, options);
-		}
-
-	});
+	return createClassDecorator(
+		(target: Constructor<Piece>) =>
+			class extends target {
+				public constructor(store: Store<string, Piece, typeof Piece>, file: string[], directory: string) {
+					super(store, file, directory, options);
+				}
+			}
+	);
 }
 
 /**
@@ -73,7 +74,7 @@ export function createFunctionInhibitor(inhibitor: Inhibitor, fallback: Fallback
 		descriptor.value = (async function descriptorValue(this: Function, ...args: any[]) {
 			const canRun = await inhibitor(...args);
 			return canRun ? method.call(this, ...args) : fallback.call(this, ...args);
-		}) as unknown as undefined;
+		} as unknown) as undefined;
 	});
 }
 

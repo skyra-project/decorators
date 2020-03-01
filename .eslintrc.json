@@ -1,6 +1,9 @@
 {
-  "extends": "bamboo",
-  "parserOptions": {
-    "project": "./tsconfig.eslint.json"
-  }
+	"extends": "bamboo",
+	"parserOptions": {
+		"project": "./tsconfig.eslint.json"
+	},
+	"rules": {
+		"padded-blocks": "off"
+	}
 }

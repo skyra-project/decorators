@@ -1,14 +1,12 @@
 import ava from 'ava';
-import { requiresGuildContext } from '../';
+import { requiresGuildContext } from '../src';
 import { Guild, Message } from './lib/class-mocks';
 
 class Test {
-
 	@requiresGuildContext()
 	public getName(message: Message) {
 		return message.guild!.name;
 	}
-
 }
 
 const instance = new Test();

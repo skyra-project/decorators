@@ -1,56 +1,107 @@
 {
-  "name": "@skyra/decorators",
-  "version": "0.0.2",
-  "description": "TypeScript decorators for Skyra",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "repository": "https://github.com/skyra-project/skyra-decorators",
-  "author": "@skyra",
-  "license": "MIT",
-  "private": false,
-  "scripts": {
-    "prepublishOnly": "yarn build",
-    "lint": "eslint --ext ts src test --fix",
-    "test": "ava",
-    "docs": "typedoc",
-    "build": "tsc -b src",
-    "watch": "tsc -b src -w"
-  },
-  "devDependencies": {
-    "@types/ws": "^7.2.2",
-    "@typescript-eslint/eslint-plugin": "^2.21.0",
-    "@typescript-eslint/parser": "^2.21.0",
-    "ava": "^3.4.0",
-    "discord.js": "github:discordjs/discord.js#fe7df708e44e0280dfaf0f8e457b154781bb5140",
-    "eslint": "^6.8.0",
-    "eslint-config-bamboo": "^3.0.0",
-    "klasa": "github:dirigeants/klasa#sgn",
-    "source-map-support": "^0.5.16",
-    "ts-node": "^8.6.2",
-    "typedoc": "^0.16.11",
-    "typescript": "^3.8.3"
-  },
-  "peerDependencies": {
-    "discord.js": "github:discordjs/discord.js#fe7df708e44e0280dfaf0f8e457b154781bb5140",
-    "klasa": "github:dirigeants/klasa#sgn"
-  },
-  "files": [
-    "dist",
-    "!dist/tsconfig.tsbuildinfo"
-  ],
-  "ava": {
-    "extensions": [
-      "ts"
-    ],
-    "files": [
-      "test/**/*.test.ts"
-    ],
-    "require": [
-      "ts-node/register",
-      "source-map-support/register"
-    ]
-  },
-  "engines": {
-    "node": ">=10"
-  }
+	"name": "@skyra/decorators",
+	"version": "0.0.2",
+	"description": "TypeScript decorators for Skyra",
+	"main": "dist/index.js",
+	"types": "dist/index.d.ts",
+	"author": "@skyra",
+	"license": "MIT",
+	"private": false,
+	"scripts": {
+		"prepublishOnly": "yarn build",
+		"lint": "eslint --ext ts src test --fix",
+		"test": "ava",
+		"docs": "typedoc",
+		"build": "tsc -b src",
+		"watch": "tsc -b src -w",
+		"up": "yarn upgrade-interactive --latest",
+		"sversion": "standard-version",
+		"commit": "git-cz",
+		"cz": "git-cz"
+	},
+	"devDependencies": {
+		"@commitlint/cli": "^8.3.5",
+		"@commitlint/config-conventional": "^8.3.4",
+		"@types/ws": "^7.2.2",
+		"@typescript-eslint/eslint-plugin": "^2.21.0",
+		"@typescript-eslint/parser": "^2.21.0",
+		"ava": "^3.4.0",
+		"cz-conventional-changelog": "^3.1.0",
+		"discord.js": "github:discordjs/discord.js#fe7df708e44e0280dfaf0f8e457b154781bb5140",
+		"eslint": "^6.8.0",
+		"eslint-config-bamboo": "^3.0.0",
+		"husky": "^4.2.1",
+		"klasa": "github:dirigeants/klasa#sgn",
+		"lint-staged": "^10.0.8",
+		"prettier": "^1.19.1",
+		"source-map-support": "^0.5.16",
+		"standard-version": "^7.1.0",
+		"ts-node": "^8.6.2",
+		"typedoc": "^0.16.11",
+		"typescript": "^3.8.3"
+	},
+	"peerDependencies": {
+		"discord.js": "github:discordjs/discord.js#fe7df708e44e0280dfaf0f8e457b154781bb5140",
+		"klasa": "github:dirigeants/klasa#sgn"
+	},
+	"files": [
+		"dist",
+		"!dist/tsconfig.tsbuildinfo"
+	],
+	"ava": {
+		"extensions": [
+			"ts"
+		],
+		"files": [
+			"test/**/*.test.ts"
+		],
+		"require": [
+			"ts-node/register",
+			"source-map-support/register"
+		]
+	},
+	"engines": {
+		"node": ">=10"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/skyra-project/skyra-decorators.git"
+	},
+	"bugs": {
+		"url": "https://github.com/skyra-project/skyra-decorators/issues"
+	},
+	"keywords": [
+		"skyra",
+		"typescript",
+		"ts",
+		"yarn",
+		"discord",
+		"bot",
+		"decorators"
+	],
+	"husky": {
+		"hooks": {
+			"commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+			"pre-commit": "yarn lint-staged"
+		}
+	},
+	"commitlint": {
+		"extends": [
+			"@commitlint/config-conventional"
+		]
+	},
+	"lint-staged": {
+		"*.ts": [
+			"prettier --write --config ./.prettierrc",
+			"eslint --fix --ext ts"
+		]
+	},
+	"config": {
+		"commitizen": {
+			"path": "./node_modules/cz-conventional-changelog"
+		}
+	},
+	"publishConfig": {
+		"access": "public"
+	}
 }
