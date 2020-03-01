@@ -1,8 +1,0 @@
-{
-	"extends": "eslint-config-bamboo",
-	"compilerOptions": {
-		"declaration": true,
-		"declarationMap": true,
-		"removeComments": false
-	}
-}
