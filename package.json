@@ -1,45 +1,43 @@
 {
-  "name": "klasa-decorators",
-  "version": "0.0.2",
-  "description": "TypeScript decorators for Klasa",
+  "name": "@skyra/decorators",
+  "version": "1.0.0",
+  "description": "TypeScript decorators for Skyra",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "repository": "https://github.com/kyranet/klasa-decorators",
-  "author": "kyranet <kyradiscord@gmail.com>",
+  "repository": "https://github.com/skyra-project/skyra-decorators",
+  "author": "@skyra",
   "license": "MIT",
   "private": false,
   "scripts": {
     "prepublishOnly": "yarn build",
-    "build:browser": "webpack",
     "lint": "eslint --ext ts src test --fix",
-    "test:lint": "eslint --ext ts src test",
     "test": "ava",
     "build": "tsc -b src",
-    "watch": "tsc -wb src"
+    "watch": "tsc -b src -w"
   },
   "devDependencies": {
-    "@types/ws": "^6.0.4",
-    "@typescript-eslint/eslint-plugin": "^2.10.0",
-    "@typescript-eslint/parser": "^2.10.0",
-    "ava": "^2.4.0",
-    "discord.js": "github:discordjs/discord.js#master",
-    "eslint": "^6.7.2",
+    "@types/ws": "^7.2.2",
+    "@typescript-eslint/eslint-plugin": "^2.21.0",
+    "@typescript-eslint/parser": "^2.21.0",
+    "ava": "^3.4.0",
+    "discord.js": "github:discordjs/discord.js#fe7df708e44e0280dfaf0f8e457b154781bb5140",
+    "eslint": "^6.8.0",
     "eslint-config-bamboo": "^3.0.0",
-    "klasa": "github:dirigeants/klasa#settings",
+    "klasa": "github:dirigeants/klasa#sgn",
     "source-map-support": "^0.5.16",
-    "ts-node": "^8.5.4",
-    "typescript": "^3.7.3"
+    "ts-node": "^8.6.2",
+    "typedoc": "^0.16.11",
+    "typescript": "^3.8.3"
   },
   "peerDependencies": {
-    "discord.js": "github:discordjs/discord.js#master",
-    "klasa": "github:dirigeants/klasa#settings"
+    "discord.js": "github:discordjs/discord.js#fe7df708e44e0280dfaf0f8e457b154781bb5140",
+    "klasa": "github:dirigeants/klasa#sgn"
   },
   "files": [
     "dist",
     "!dist/tsconfig.tsbuildinfo"
   ],
   "ava": {
-    "compileEnhancements": false,
     "extensions": [
       "ts"
     ],
@@ -52,6 +50,6 @@
     ]
   },
   "engines": {
-    "node": ">=10.1.0"
+    "node": ">=10"
   }
 }
