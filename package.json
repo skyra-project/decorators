@@ -33,7 +33,7 @@
 		"husky": "^4.2.1",
 		"klasa": "github:dirigeants/klasa#sgn",
 		"lint-staged": "^10.0.8",
-		"prettier": "^1.19.1",
+		"prettier": "^2.0.2",
 		"source-map-support": "^0.5.16",
 		"standard-version": "^7.1.0",
 		"ts-node": "^8.6.2",
