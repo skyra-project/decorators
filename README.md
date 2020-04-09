@@ -21,8 +21,8 @@
 		<a href="https://bundlephobia.com/result?p=@skyra/decorators">
 			<img alt="npm bundle size" src="https://img.shields.io/bundlephobia/min/@skyra/decorators?label=bundle%20size&logo=webpack">
 		</a>
-		<a href="https://dependabot.com">
-			<img src="https://api.dependabot.com/badges/status?host=github&repo=skyra-project/skyra-decorators" alt="Dependabot Status">
+		<a href="https://depfu.com/github/skyra-project/skyra-decorators?project_id=11733">
+			<img src="https://badges.depfu.com/badges/2be62b7690111eea9aef95f7c8ca07fa/count.svg" alt="Depfu" />
 		</a>
 		<a href="https://www.patreon.com/kyranet">
 			<img src="https://img.shields.io/badge/donate-patreon-F96854.svg?logo=patreon" alt="Patreon" />
