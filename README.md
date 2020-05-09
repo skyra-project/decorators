@@ -8,7 +8,7 @@
 <div align="center">
 	<p>
 		<a href="https://github.com/skyra-project/skyra-decorators/blob/master/LICENSE.md">
-			<img src="https://img.shields.io/github/license/favware/node-packages?logo=github&maxAge=3600" alt="NPM version" />
+			<img src="https://img.shields.io/github/license/skyra-project/skyra-decorators?logo=github&maxAge=3600" alt="NPM version" />
 		</a>
 	</p>
 	<p>
