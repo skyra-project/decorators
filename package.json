@@ -23,8 +23,8 @@
 		"@commitlint/cli": "^8.3.5",
 		"@commitlint/config-conventional": "^8.3.4",
 		"@types/ws": "^7.2.4",
-		"@typescript-eslint/eslint-plugin": "^2.33.0",
-		"@typescript-eslint/parser": "^2.33.0",
+		"@typescript-eslint/eslint-plugin": "^2.34.0",
+		"@typescript-eslint/parser": "^2.34.0",
 		"ava": "^3.8.2",
 		"cz-conventional-changelog": "^3.2.0",
 		"discord.js": "github:discordjs/discord.js#fe7df708e44e0280dfaf0f8e457b154781bb5140",
@@ -32,13 +32,13 @@
 		"eslint-config-bamboo": "^3.0.0",
 		"husky": "^4.2.5",
 		"klasa": "github:dirigeants/klasa#sgn",
-		"lint-staged": "^10.2.2",
+		"lint-staged": "^10.2.6",
 		"prettier": "^2.0.5",
 		"source-map-support": "^0.5.19",
 		"standard-version": "^7.1.0",
 		"ts-node": "^8.10.1",
-		"typedoc": "^0.17.6",
-		"typescript": "^3.9.2"
+		"typedoc": "^0.17.7",
+		"typescript": "^3.9.3"
 	},
 	"peerDependencies": {
 		"discord.js": "github:discordjs/discord.js#fe7df708e44e0280dfaf0f8e457b154781bb5140",
