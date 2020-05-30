@@ -1,7 +1,6 @@
-import ava from 'ava';
 import { createFunctionInhibitor } from '../src';
 
-ava('Custom Function Inhibitor', async test => {
+test('Custom Function Inhibitor', async () => {
 	class Test {
 		public value = Symbol('Test');
 
@@ -13,5 +12,5 @@ ava('Custom Function Inhibitor', async test => {
 
 	const instance = new Test();
 	const result = await instance.getValue();
-	test.is(result, instance.value);
+	expect(result).toBe(instance.value);
 });

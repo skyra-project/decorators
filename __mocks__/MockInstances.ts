@@ -1,5 +1,7 @@
 import { Command, CommandStore, KlasaClient } from 'klasa';
 
+export const client = new KlasaClient();
+
 export class Message {
 	public content: string;
 	public guild: Guild | null;
@@ -11,7 +13,7 @@ export class Message {
 		this.permission = permission;
 	}
 
-	public hasAtLeastPermissionLevel(level: number) {
+	public hasAtLeastPermissionLevel(level: number): boolean {
 		return this.permission >= level;
 	}
 }
@@ -31,13 +33,13 @@ export class MockClient extends KlasaClient {
 }
 
 export class MockCommand extends Command {
-	public constructor(store: CommandStore, file: string[], directory: string) {
-		super(store, file, directory);
+	public constructor(store: CommandStore, directory: string, file: string[]) {
+		super(store, directory, file);
 	}
 }
 
 export class MockCommandStore extends CommandStore {
-	public constructor(prop: string, client?: KlasaClient, name?: string, holds?: typeof Command) {
-		super(client!, name!, holds!);
+	public constructor(prop: string, client?: KlasaClient) {
+		super(client!);
 	}
 }

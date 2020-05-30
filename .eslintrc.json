@@ -3,7 +3,25 @@
 	"parserOptions": {
 		"project": "./tsconfig.eslint.json"
 	},
+	"env": {
+		"jest": true
+	},
 	"rules": {
-		"padded-blocks": "off"
-	}
+		// Handled by Prettier
+		"padded-blocks": "off",
+		"space-before-function-paren": "off",
+
+		// Invalid for this project
+		"@typescript-eslint/no-unsafe-return": "off"
+	},
+	"overrides": [
+		{
+			"files": ["__tests__/*.test.ts"],
+			"rules": {
+				"@typescript-eslint/no-unsafe-assignment": "off",
+				"@typescript-eslint/no-unsafe-call": "off",
+				"@typescript-eslint/no-unsafe-member-access": "off"
+			}
+		}
+	]
 }

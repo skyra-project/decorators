@@ -1,9 +1,9 @@
-import { Constructor } from 'discord.js';
-import { Piece, PieceOptions, Store } from 'klasa';
+import { Piece, PieceOptions, Store } from '@klasa/core';
+import { Constructor, KlasaMessage } from 'klasa';
 
 /**
  * Utility to make a method decorator with lighter syntax and inferred types.
- * @since 0.0.1
+ * @since 1.0.0
  * @param fn The method to decorate
  * @example
  * // Enumerable function
@@ -13,30 +13,31 @@ import { Piece, PieceOptions, Store } from 'klasa';
  *   });
  * }
  */
-export function createMethodDecorator(fn: MethodDecorator) {
+export function createMethodDecorator(fn: MethodDecorator): MethodDecorator {
 	return fn;
 }
 
 /**
  * Utility to make a class decorator with lighter syntax and inferred types.
- * @since 0.0.2
+ * @since 1.0.0
  * @param fn The class to decorate
  * @see {@link ApplyOptions}
  */
-export function createClassDecorator(fn: Function) {
+export function createClassDecorator<TFunction extends (...args: any[]) => void>(fn: TFunction): ClassDecorator {
 	return fn;
 }
 
 /**
  * Decorator function that applies given options to any Klasa piece
- * @since 0.0.2
+ * @since 1.0.0
  * @param options The options to pass to the piece constructor
  */
-export function ApplyOptions<T extends PieceOptions>(options: T) {
+// eslint-disable-next-line @typescript-eslint/naming-convention
+export function ApplyOptions<T extends PieceOptions>(options: T): ClassDecorator {
 	return createClassDecorator(
 		(target: Constructor<Piece>) =>
 			class extends target {
-				public constructor(store: Store<string, Piece, typeof Piece>, file: string[], directory: string) {
+				public constructor(store: Store<Piece>, file: string[], directory: string) {
 					super(store, file, directory, options);
 				}
 			}
@@ -45,7 +46,7 @@ export function ApplyOptions<T extends PieceOptions>(options: T) {
 
 /**
  * Utility to make function inhibitors.
- * @since 0.0.1
+ * @since 1.0.0
  * @param inhibitor The function that defines whether or not the function should be run, returning the returned value from fallback
  * @param fallback The fallback value that defines what the method should return in case the inhibitor fails
  * @example
@@ -65,13 +66,13 @@ export function ApplyOptions<T extends PieceOptions>(options: T) {
  *     message.hasAtLeastPermissionLevel(value), fallback);
  * }
  */
-export function createFunctionInhibitor(inhibitor: Inhibitor, fallback: Fallback = () => undefined) {
+export function createFunctionInhibitor(inhibitor: Inhibitor, fallback: Fallback = (): void => undefined): MethodDecorator {
 	return createMethodDecorator((_target, _propertyKey, descriptor) => {
 		const method = descriptor.value;
 		if (!method) throw new Error('Function inhibitors require a [[value]].');
 		if (typeof method !== 'function') throw new Error('Function inhibitors can only be applied to functions.');
 
-		descriptor.value = (async function descriptorValue(this: Function, ...args: any[]) {
+		descriptor.value = (async function descriptorValue(this: (...args: any[]) => any, ...args: any[]) {
 			const canRun = await inhibitor(...args);
 			return canRun ? method.call(this, ...args) : fallback.call(this, ...args);
 		} as unknown) as undefined;
@@ -80,30 +81,30 @@ export function createFunctionInhibitor(inhibitor: Inhibitor, fallback: Fallback
 
 /**
  * Requires a permission, this decorator requires the first argument to be a `KlasaMessage` instance
- * @since 0.0.1
+ * @since 1.0.0
  * @param value The minimum permission level for this inhibitor to pass
  * @param fallback The fallback value passed to `createFunctionInhibitor`
  */
-export function requiresPermission(value: number, fallback: Fallback = () => undefined) {
-	return createFunctionInhibitor((message: any) => message.hasAtLeastPermissionLevel(value), fallback);
+export function requiresPermission(value: number, fallback: Fallback = (): void => undefined): MethodDecorator {
+	return createFunctionInhibitor((message: KlasaMessage) => message.hasAtLeastPermissionLevel(value), fallback);
 }
 
 /**
  * Requires the message to be run in a guild context, this decorator requires the first argument to be a `KlasaMessage` instance
- * @since 0.0.1
+ * @since 1.0.0
  * @param fallback The fallback value passed to `createFunctionInhibitor`
  */
-export function requiresGuildContext(fallback: Fallback = () => undefined) {
-	return createFunctionInhibitor((message: any) => message.guild !== null, fallback);
+export function requiresGuildContext(fallback: Fallback = (): void => undefined): MethodDecorator {
+	return createFunctionInhibitor((message: KlasaMessage) => message.guild !== null, fallback);
 }
 
 /**
  * Requires the message to be run in a dm context, this decorator requires the first argument to be a `KlasaMessage` instance
- * @since 0.0.1
+ * @since 1.0.0
  * @param fallback The fallback value passed to `createFunctionInhibitor`
  */
-export function requiresDMContext(fallback: Fallback = () => undefined) {
-	return createFunctionInhibitor((message: any) => message.guild === null, fallback);
+export function requiresDMContext(fallback: Fallback = (): void => undefined): MethodDecorator {
+	return createFunctionInhibitor((message: KlasaMessage) => message.guild === null, fallback);
 }
 
 /**

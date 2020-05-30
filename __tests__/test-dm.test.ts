@@ -1,6 +1,5 @@
-import ava from 'ava';
+import { Guild, Message } from '@mocks/MockInstances';
 import { requiresDMContext } from '../src';
-import { Guild, Message } from './lib/class-mocks';
 
 class Test {
 	@requiresDMContext()
@@ -11,16 +10,16 @@ class Test {
 
 const instance = new Test();
 
-ava('Test DM (Required)', async test => {
+test('Test DM (Required)', async () => {
 	const guild = new Guild('Guild');
 	const message = new Message('Hello World', guild, 5);
 	const inGuild = await instance.inGuild(message);
-	test.is(inGuild, undefined);
+	expect(inGuild).toBe(undefined);
 });
 
-ava('Test DM (Non-Existant)', async test => {
+test('Test DM (Non-Existant)', async () => {
 	const guild = null;
 	const message = new Message('Hello World', guild, 5);
 	const inGuild = await instance.inGuild(message);
-	test.is(inGuild, true);
+	expect(inGuild).toBe(true);
 });

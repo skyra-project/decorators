@@ -9,8 +9,8 @@
 	"private": false,
 	"scripts": {
 		"prepublishOnly": "yarn build",
-		"lint": "eslint --ext ts src test --fix",
-		"test": "ava",
+		"lint": "eslint --ext ts src __tests__ __mocks__ --fix",
+		"test": "jest",
 		"docs": "typedoc",
 		"build": "tsc -b src",
 		"watch": "tsc -b src -w",
@@ -22,46 +22,35 @@
 	"devDependencies": {
 		"@commitlint/cli": "^8.3.5",
 		"@commitlint/config-conventional": "^8.3.4",
+		"@klasa/core": "github:dirigeants/core#build",
+		"@types/jest": "^25.2.3",
 		"@types/ws": "^7.2.4",
-		"@typescript-eslint/eslint-plugin": "^2.34.0",
-		"@typescript-eslint/parser": "^2.34.0",
-		"ava": "^3.8.2",
+		"@typescript-eslint/eslint-plugin": "^3.0.2",
+		"@typescript-eslint/parser": "^3.0.2",
 		"cz-conventional-changelog": "^3.2.0",
-		"discord.js": "github:discordjs/discord.js#fe7df708e44e0280dfaf0f8e457b154781bb5140",
-		"eslint": "^6.8.0",
-		"eslint-config-bamboo": "^3.0.0",
+		"eslint": "^7.1.0",
+		"eslint-config-bamboo": "^5.0.0",
 		"husky": "^4.2.5",
-		"klasa": "github:dirigeants/klasa#sgn",
-		"lint-staged": "^10.2.6",
+		"jest": "^26.0.1",
+		"jest-circus": "^26.0.1",
+		"klasa": "github:dirigeants/klasa#build",
+		"lint-staged": "^10.2.7",
 		"prettier": "^2.0.5",
-		"source-map-support": "^0.5.19",
-		"standard-version": "^7.1.0",
-		"ts-node": "^8.10.1",
+		"standard-version": "^8.0.0",
+		"ts-jest": "^26.0.0",
 		"typedoc": "^0.17.7",
 		"typescript": "^3.9.3"
 	},
 	"peerDependencies": {
-		"discord.js": "github:discordjs/discord.js#fe7df708e44e0280dfaf0f8e457b154781bb5140",
-		"klasa": "github:dirigeants/klasa#sgn"
+		"@klasa/core": "github:dirigeants/core#build",
+		"klasa": "github:dirigeants/klasa#build"
 	},
 	"files": [
 		"dist",
 		"!dist/tsconfig.tsbuildinfo"
 	],
-	"ava": {
-		"extensions": [
-			"ts"
-		],
-		"files": [
-			"test/**/*.test.ts"
-		],
-		"require": [
-			"ts-node/register",
-			"source-map-support/register"
-		]
-	},
 	"engines": {
-		"node": ">=10"
+		"node": ">=12"
 	},
 	"repository": {
 		"type": "git",

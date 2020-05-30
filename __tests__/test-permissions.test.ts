@@ -1,6 +1,5 @@
-import ava from 'ava';
+import { Message } from '@mocks/MockInstances';
 import { requiresPermission } from '../src';
-import { Message } from './lib/class-mocks';
 
 class Test {
 	@requiresPermission(5)
@@ -9,16 +8,16 @@ class Test {
 	}
 }
 
-ava('Test Permissions (Existent)', async test => {
+test('Test Permissions (Existent)', async () => {
 	const instance = new Test();
 	const message = new Message('Hello World', null, 5);
 	const content = await instance.getContent(message);
-	test.is(content, 'Hello World');
+	expect(content).toBe('Hello World');
 });
 
-ava('Test Permissions (Non-Existent)', async test => {
+test('Test Permissions (Non-Existent)', async () => {
 	const instance = new Test();
 	const message = new Message('Hello World', null, 4);
 	const content = await instance.getContent(message);
-	test.is(content, undefined);
+	expect(content).toBe(undefined);
 });
