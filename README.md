@@ -1,14 +1,14 @@
 <div align="center">
   <p>
 	<h1> @skyra/decorators </h1> 
-	<h3> TypeScript decorators for Skyra </h3>
+	<h3> TypeScript decorators for Klasa Projects </h3>
   </p>
 </div>
 
 <div align="center">
 	<p>
 		<a href="https://github.com/skyra-project/skyra-decorators/blob/master/LICENSE.md">
-			<img src="https://img.shields.io/github/license/favware/node-packages?logo=github&maxAge=3600" alt="NPM version" />
+			<img src="https://img.shields.io/github/license/skyra-project/skyra-decorators?logo=github&maxAge=3600" alt="NPM version" />
 		</a>
 	</p>
 	<p>
@@ -29,6 +29,12 @@
 		</a>
 	</p>
 </div>
+
+## About
+
+This package is a collection of useful TypeScript decorators for Klasa projects.
+
+Please note that as of version 2.0.0 this package targets [@klasa/core](https://github.com/dirigeants/core/) and the new [klasa](https://github.com/dirigeants/klasa/), Discord.JS is no longer supported!
 
 ## Contributing
 
