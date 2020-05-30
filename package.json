@@ -50,7 +50,7 @@
 		"!dist/tsconfig.tsbuildinfo"
 	],
 	"engines": {
-		"node": ">=12"
+		"node": ">=14"
 	},
 	"repository": {
 		"type": "git",

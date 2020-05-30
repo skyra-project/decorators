@@ -3,8 +3,7 @@
 	"compilerOptions": {
 		"rootDir": "./",
 		"outDir": "../dist",
-		"composite": true,
-		"experimentalDecorators": true
+		"composite": true
 	},
 	"files": ["index.ts"]
 }
