@@ -1,4 +1,4 @@
-import { createFunctionInhibitor } from '../../src';
+import { createFunctionInhibitor } from '@src/utils';
 
 test('Custom Function Inhibitor', async () => {
 	class Test {

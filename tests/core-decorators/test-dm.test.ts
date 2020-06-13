@@ -1,5 +1,5 @@
 import { Guild, Message } from '@mocks/MockInstances';
-import { requiresDMContext } from '../../src';
+import { requiresDMContext } from '@src/core-decorators';
 
 class Test {
 	@requiresDMContext()

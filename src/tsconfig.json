@@ -5,5 +5,5 @@
 		"outDir": "../dist",
 		"composite": true
 	},
-	"files": ["index.ts"]
+	"include": ["."]
 }

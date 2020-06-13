@@ -2,9 +2,9 @@
 	"extends": "../tsconfig.base.json",
 	"compilerOptions": {
 		"baseUrl": ".",
-		"rootDir": ".",
 		"paths": {
-			"@mocks/*": ["./mocks/*"]
+			"@mocks/*": ["./mocks/*"],
+			"@src/*": ["../src/*"]
 		}
 	},
 	"include": [".", "../src/**/*"],

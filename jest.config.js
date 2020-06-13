@@ -6,7 +6,8 @@ module.exports = {
 	testMatch: ['<rootDir>/tests/**/*.test.ts'],
 	setupFilesAfterEnv: ['<rootDir>/tests/jest.setup.ts'],
 	moduleNameMapper: {
-		'^@mocks/(.*)$': '<rootDir>/tests/mocks/$1'
+		'^@mocks/(.*)$': '<rootDir>/tests/mocks/$1',
+		'^@src/(.*)$': '<rootDir>/src/$1'
 	},
 	globals: {
 		'ts-jest': {
