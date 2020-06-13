@@ -7,8 +7,8 @@ on:
   pull_request:
 
 jobs:
-  eslint:
-    name: eslint
+  Linting:
+    name: Linting
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Project
@@ -27,12 +27,12 @@ jobs:
       - name: Run ESLint
         uses: icrawl/action-eslint@v1
 
-  test:
-    name: Node v${{ matrix.node_version }} - ${{ matrix.os }}
+  Testing:
+    name: Testing - Node v${{ matrix.node_version }} - ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        node_version: [10, 12, 13]
+        node_version: [12, 14]
         os: [ubuntu-latest, windows-latest, macOS-latest]
 
     steps:
@@ -54,8 +54,8 @@ jobs:
       - name: Test
         run: yarn test
 
-  tsc:
-    name: tsc
+  Building:
+    name: Building
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Project
