@@ -16,7 +16,7 @@
 	},
 	"overrides": [
 		{
-			"files": ["__tests__/*.test.ts"],
+			"files": ["tests/**/*.test.ts", "tests/jest.setup.ts"],
 			"rules": {
 				"@typescript-eslint/no-unsafe-assignment": "off",
 				"@typescript-eslint/no-unsafe-call": "off",

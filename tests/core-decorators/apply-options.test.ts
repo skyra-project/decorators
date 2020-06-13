@@ -1,6 +1,6 @@
 import { client, MockCommandStore } from '@mocks/MockInstances';
 import { Command, CommandOptions } from 'klasa';
-import { ApplyOptions } from '../src';
+import { ApplyOptions } from '../../src';
 
 test('ApplyOptions Decorator', () => {
 	@ApplyOptions<CommandOptions>({

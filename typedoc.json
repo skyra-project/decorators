@@ -2,11 +2,11 @@
 	"out": "./docs/",
 	"readme": "./README.md",
 	"name": "Skyra Decorators",
-	"exclude": ["**/node_modules/**", "__tests__/**", "__mocks__/**"],
+	"exclude": ["**/node_modules/**", "tests/**"],
 	"mode": "file",
 	"excludeExternals": true,
 	"excludePrivate": true,
 	"excludeProtected": true,
 	"excludeNotExported": true,
-    "tsconfig": "./tsconfig.base.json"
+	"tsconfig": "./tsconfig.base.json"
 }

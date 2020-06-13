@@ -1,5 +1,5 @@
 import { Guild, Message } from '@mocks/MockInstances';
-import { requiresGuildContext } from '../src';
+import { requiresGuildContext } from '../../src';
 
 class Test {
 	@requiresGuildContext()

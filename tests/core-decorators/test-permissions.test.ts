@@ -1,5 +1,5 @@
 import { Message } from '@mocks/MockInstances';
-import { requiresPermission } from '../src';
+import { requiresPermission } from '../../src';
 
 class Test {
 	@requiresPermission(5)
