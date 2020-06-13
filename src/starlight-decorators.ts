@@ -22,7 +22,7 @@
  * SOFTWARE.
  */
 
-import type { PieceConstructor } from '@klasa/core';
+import type { Constructor } from '@klasa/core';
 import type { Command, CommandOptions, CommandStore, CustomUsageArgument } from 'klasa';
 import { createClassDecorator } from './utils';
 
@@ -46,14 +46,14 @@ import { createClassDecorator } from './utils';
  */
 export function CreateResolvers(resolvers: [string, CustomUsageArgument][]): ClassDecorator {
 	return createClassDecorator(
-		(target: PieceConstructor<Command>): PieceConstructor<Command> =>
-			(class extends target {
+		(target: Constructor<Command>) =>
+			class extends target {
 				public constructor(store: CommandStore, directory: string, files: readonly string[], options: CommandOptions) {
 					super(store, directory, files, options);
 
 					for (const resolver of resolvers) this.createCustomResolver(...resolver);
 				}
-			} as unknown) as PieceConstructor<Command>
+			}
 	);
 }
 

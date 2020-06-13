@@ -13,13 +13,11 @@ import { createClassDecorator, createFunctionInhibitor, Fallback } from './utils
  *	})
  *	export default class extends Command {}
  */
-// eslint-disable-next-line @typescript-eslint/naming-convention
 export function ApplyOptions<T extends PieceOptions>(options: T): ClassDecorator {
 	return createClassDecorator(
 		(target: Constructor<Piece>) =>
 			class extends target {
 				public constructor(store: Store<Piece>, file: string[], directory: string) {
-					// eslint-disable-next-line @typescript-eslint/no-unsafe-call
 					super(store, file, directory, options);
 				}
 			}

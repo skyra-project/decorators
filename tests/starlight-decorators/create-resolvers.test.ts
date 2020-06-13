@@ -10,7 +10,7 @@ describe('CreateResolvers Decorator', () => {
 		[
 			'key',
 			(arg, _possible, message, [action]) => {
-				if (action === 'show' || arg) return arg || ''; // eslint-disable-line @typescript-eslint/no-unsafe-return
+				if (action === 'show' || arg) return arg || '';
 				throw message.language.get('COMMAND_CONF_NOKEY');
 			}
 		],
@@ -29,7 +29,7 @@ describe('CreateResolvers Decorator', () => {
 			[
 				'key',
 				(arg, _possible, message, [action]) => {
-					if (action === 'show' || arg) return arg || ''; // eslint-disable-line @typescript-eslint/no-unsafe-return
+					if (action === 'show' || arg) return arg || '';
 					throw message.language.get('COMMAND_CONF_NOKEY');
 				}
 			],
@@ -64,7 +64,7 @@ describe('CreateResolvers Decorator', () => {
 			[
 				'key',
 				(arg, _possible, message, [action]) => {
-					if (action === 'show' || arg) return arg || ''; // eslint-disable-line @typescript-eslint/no-unsafe-return
+					if (action === 'show' || arg) return arg || '';
 					throw message.language.get('COMMAND_CONF_NOKEY');
 				}
 			]
