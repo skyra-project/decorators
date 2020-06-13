@@ -2,7 +2,7 @@ import { Cache } from '@klasa/cache';
 import { client, MockCommandStore } from '@mocks/MockInstances';
 import { CreateResolvers } from '@src/starlight-decorators';
 import { Command, CommandOptions, CustomUsageArgument } from 'klasa';
-import { ApplyOptions } from '../../dist';
+import { ApplyOptions } from '@src/core-decorators';
 
 describe('CreateResolvers Decorator', () => {
 	const mockCommandStore = new MockCommandStore('name', client);
