@@ -22,8 +22,8 @@
  * SOFTWARE.
  */
 
-import type { Constructor } from '@klasa/core';
-import type { Command, CommandOptions, CommandStore, CustomUsageArgument } from 'klasa';
+import type { Constructor } from 'discord.js';
+import type { ArgResolverCustomMethod, Command, CommandOptions, CommandStore } from 'klasa';
 import { createClassDecorator } from './utils';
 
 /**
@@ -44,7 +44,7 @@ import { createClassDecorator } from './utils';
  *	])
  *	export default class extends Command {}
  */
-export function CreateResolvers(resolvers: [string, CustomUsageArgument][]): ClassDecorator {
+export function CreateResolvers(resolvers: [string, ArgResolverCustomMethod][]): ClassDecorator {
 	return createClassDecorator(
 		(target: Constructor<Command>) =>
 			class extends target {

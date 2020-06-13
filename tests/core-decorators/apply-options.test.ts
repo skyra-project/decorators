@@ -13,7 +13,7 @@ test('ApplyOptions Decorator', () => {
 		}
 	}
 
-	const instance = new TestPiece(new MockCommandStore('name', client), __dirname, [__filename]);
+	const instance = new TestPiece(new MockCommandStore('name', client), [__filename], __dirname);
 
 	expect(instance.name).toBe('test');
 	expect(instance.cooldown).toBe(10);

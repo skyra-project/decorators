@@ -1,28 +1,10 @@
-import { Cache } from '@klasa/cache';
 import { client, MockCommandStore } from '@mocks/MockInstances';
+import { ApplyOptions } from '@src/core-decorators';
 import { CreateResolvers } from '@src/starlight-decorators';
-import { Command, CommandOptions, CustomUsageArgument } from 'klasa';
-import { ApplyOptions } from '../../dist';
+import { Command, CommandOptions } from 'klasa';
 
 describe('CreateResolvers Decorator', () => {
 	const mockCommandStore = new MockCommandStore('name', client);
-	const receivedResolvers = new Cache<string, CustomUsageArgument>([
-		[
-			'key',
-			(arg, _possible, message, [action]) => {
-				if (action === 'show' || arg) return arg || '';
-				throw message.language.get('COMMAND_CONF_NOKEY');
-			}
-		],
-		[
-			'value',
-			(arg, possible, message, [action]) => {
-				if (!['set', 'remove'].includes(action as string)) return null;
-				if (arg) return message.client.arguments.get('...string')!.run(arg, possible, message);
-				throw message.language.get('COMMAND_CONF_NOVALUE');
-			}
-		]
-	]);
 
 	test('Applies Resolvers to a command', () => {
 		@CreateResolvers([
@@ -44,15 +26,16 @@ describe('CreateResolvers Decorator', () => {
 		])
 		class TestCommand extends Command {}
 
-		const instance = new TestCommand(mockCommandStore, __dirname, [__filename]);
+		const instance = new TestCommand(mockCommandStore, [__filename], __dirname);
+		const customResolvers = [...Object.entries(instance.usage.customResolvers)];
 
-		expect(instance.usage.customResolvers.firstValue).toEqual(expect.any(Function));
-		expect(instance.usage.customResolvers.firstKey).toEqual(receivedResolvers.firstKey);
+		expect(customResolvers[0][0]).toEqual('key');
+		expect(customResolvers[0][1]).toEqual(expect.any(Function));
 
-		expect(instance.usage.customResolvers.lastValue).toEqual(expect.any(Function));
-		expect(instance.usage.customResolvers.lastKey).toEqual(receivedResolvers.lastKey);
+		expect(customResolvers[1][0]).toEqual('value');
+		expect(customResolvers[1][1]).toEqual(expect.any(Function));
 
-		expect(instance.usage.customResolvers.size).toEqual(2);
+		expect(customResolvers.length).toEqual(2);
 	});
 
 	test('Is compatible with @ApplyOptions', () => {
@@ -71,14 +54,15 @@ describe('CreateResolvers Decorator', () => {
 		])
 		class TestCommand extends Command {}
 
-		const instance = new TestCommand(mockCommandStore, __dirname, [__filename]);
+		const instance = new TestCommand(mockCommandStore, [__filename], __dirname);
+		const customResolvers = [...Object.entries(instance.usage.customResolvers)];
 
 		expect(instance.name).toEqual('test');
 		expect(instance.cooldown).toEqual(10);
 
-		expect(instance.usage.customResolvers.firstValue).toEqual(expect.any(Function));
-		expect(instance.usage.customResolvers.firstKey).toEqual(receivedResolvers.firstKey);
+		expect(customResolvers[0][0]).toEqual('key');
+		expect(customResolvers[0][1]).toEqual(expect.any(Function));
 
-		expect(instance.usage.customResolvers.size).toEqual(1);
+		expect(customResolvers.length).toEqual(1);
 	});
 });

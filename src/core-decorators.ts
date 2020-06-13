@@ -1,5 +1,5 @@
-import { Permissions, PermissionsResolvable, Piece, PieceOptions, Store, TextChannel } from '@klasa/core';
-import type { Constructor, KlasaMessage } from 'klasa';
+import { Constructor, PermissionResolvable, Permissions, TextChannel } from 'discord.js';
+import type { KlasaMessage, Piece, PieceOptions, Store } from 'klasa';
 import { createClassDecorator, createFunctionInhibitor, Fallback } from './utils';
 
 /**
@@ -17,7 +17,7 @@ export function ApplyOptions<T extends PieceOptions>(options: T): ClassDecorator
 	return createClassDecorator(
 		(target: Constructor<Piece>) =>
 			class extends target {
-				public constructor(store: Store<Piece>, file: string[], directory: string) {
+				public constructor(store: Store<string, Piece, typeof Piece>, directory: string, file: string[]) {
 					super(store, file, directory, options);
 				}
 			}
@@ -60,7 +60,7 @@ export function requiresPermission(value: number, fallback: Fallback = (): void 
  * @remark In particular useful for subcommand methods
  * @param permissionsResolvable Permissions that the method should have
  */
-export const requiredPermissions = (permissionsResolvable: PermissionsResolvable): MethodDecorator => {
+export const requiredPermissions = (permissionsResolvable: PermissionResolvable): MethodDecorator => {
 	const resolved = Permissions.resolve(permissionsResolvable);
 	return createFunctionInhibitor(async (message: KlasaMessage) => {
 		const missing = (message.channel as TextChannel).permissionsFor(message.guild!.me ?? (await message.guild!.members.fetch(message.client.user!.id)))?.missing(resolved) ?? [];

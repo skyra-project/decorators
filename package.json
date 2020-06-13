@@ -1,6 +1,6 @@
 {
 	"name": "@skyra/decorators",
-	"version": "2.0.0",
+	"version": "1.0.0",
 	"description": "TypeScript decorators for Skyra",
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",
@@ -22,7 +22,7 @@
 	"devDependencies": {
 		"@commitlint/cli": "^8.3.5",
 		"@commitlint/config-conventional": "^8.3.4",
-		"@klasa/core": "github:dirigeants/core#build",
+		"discord.js": "github:discordjs/discord.js#fe7df708e44e0280dfaf0f8e457b154781bb5140",
 		"@types/jest": "^26.0.0",
 		"@types/ws": "^7.2.5",
 		"@typescript-eslint/eslint-plugin": "^3.2.0",
@@ -33,7 +33,7 @@
 		"husky": "^4.2.5",
 		"jest-circus": "^26.0.1",
 		"jest": "^26.0.1",
-		"klasa": "github:dirigeants/klasa#build",
+		"klasa": "github:dirigeants/klasa#settings",
 		"lint-staged": "^10.2.10",
 		"prettier": "^2.0.5",
 		"standard-version": "^8.0.0",
@@ -42,8 +42,8 @@
 		"typescript": "^3.9.5"
 	},
 	"peerDependencies": {
-		"@klasa/core": "github:dirigeants/core#build",
-		"klasa": "github:dirigeants/klasa#build"
+		"discord.js": "github:discordjs/discord.js#fe7df708e44e0280dfaf0f8e457b154781bb5140",
+		"klasa": "github:dirigeants/klasa#settings"
 	},
 	"files": [
 		"dist",

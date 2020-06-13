@@ -34,7 +34,7 @@
 
 This package is a collection of useful TypeScript decorators for Klasa projects.
 
-Please note that as of version 2.0.0 this package targets [@klasa/core](https://github.com/dirigeants/core/) and the new [klasa](https://github.com/dirigeants/klasa/), Discord.JS is no longer supported!
+Please note that version 1.x of this package targets [discord.js](https://github.com/discordjs/discord.js/tree/fe7df708e44e0280dfaf0f8e457b154781bb5140) and the settings branch of [klasa](https://github.com/dirigeants/klasa/tree/settings), for the version targeting [@klasa/core](https://github.com/dirigeants/core) see version 2.x!
 
 ## Contributing
 

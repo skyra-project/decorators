@@ -33,13 +33,13 @@ export class MockClient extends KlasaClient {
 }
 
 export class MockCommand extends Command {
-	public constructor(store: CommandStore, directory: string, file: string[]) {
-		super(store, directory, file);
+	public constructor(store: CommandStore, file: string[], directory: string) {
+		super(store, file, directory);
 	}
 }
 
 export class MockCommandStore extends CommandStore {
-	public constructor(prop: string, client?: KlasaClient) {
-		super(client!);
+	public constructor(prop: string, client?: KlasaClient, name?: string, holds?: typeof Command) {
+		super(client!, name!, holds!);
 	}
 }
