@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.1.0](https://github.com/skyra-project/skyra-decorators/compare/v2.0.0...v2.1.0) (2020-06-13)
+
+
+### Features
+
+* add CreateResolvers & requiredPermissions decorators ([3bdc4bd](https://github.com/skyra-project/skyra-decorators/commit/3bdc4bd4066a1e1112307c15c69fc80c790584f0))
+
 ## [2.0.0](https://github.com/skyra-project/skyra-decorators/compare/v1.0.0...v2.0.0) (2020-05-30)
 
 
