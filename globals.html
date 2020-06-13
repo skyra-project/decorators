@@ -68,15 +68,18 @@
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-interface"><a href="interfaces/fallback.html" class="tsd-kind-icon">Fallback</a></li>
 								<li class="tsd-kind-interface"><a href="interfaces/inhibitor.html" class="tsd-kind-icon">Inhibitor</a></li>
+								<li class="tsd-kind-interface"><a href="interfaces/permissionstrings.html" class="tsd-kind-icon">Permission<wbr>Strings</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-function tsd-has-type-parameter"><a href="globals.html#applyoptions" class="tsd-kind-icon">Apply<wbr>Options</a></li>
+								<li class="tsd-kind-function"><a href="globals.html#createresolvers" class="tsd-kind-icon">Create<wbr>Resolvers</a></li>
 								<li class="tsd-kind-function tsd-has-type-parameter"><a href="globals.html#createclassdecorator" class="tsd-kind-icon">create<wbr>Class<wbr>Decorator</a></li>
 								<li class="tsd-kind-function"><a href="globals.html#createfunctioninhibitor" class="tsd-kind-icon">create<wbr>Function<wbr>Inhibitor</a></li>
 								<li class="tsd-kind-function"><a href="globals.html#createmethoddecorator" class="tsd-kind-icon">create<wbr>Method<wbr>Decorator</a></li>
+								<li class="tsd-kind-function"><a href="globals.html#requiredpermissions" class="tsd-kind-icon">required<wbr>Permissions</a></li>
 								<li class="tsd-kind-function"><a href="globals.html#requiresdmcontext" class="tsd-kind-icon">requiresDMContext</a></li>
 								<li class="tsd-kind-function"><a href="globals.html#requiresguildcontext" class="tsd-kind-icon">requires<wbr>Guild<wbr>Context</a></li>
 								<li class="tsd-kind-function"><a href="globals.html#requirespermission" class="tsd-kind-icon">requires<wbr>Permission</a></li>
@@ -97,7 +100,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/skyra-project/skyra-decorators/blob/efff081/src/index.ts#L36">index.ts:36</a></li>
+									<li>Defined in <a href="https://github.com/skyra-project/skyra-decorators/blob/3bdc4bd/src/core-decorators.ts#L17">core-decorators.ts:17</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -108,6 +111,12 @@
 									<dt>since</dt>
 									<dd><p>1.0.0</p>
 									</dd>
+									<dt>example</dt>
+									<dd><pre><code><span class="hljs-type">ApplyOptions</span>&lt;<span class="hljs-type">CommandOptions</span>&gt;({
+    name: <span class="hljs-symbol">&#x27;tes</span>t&#x27;,
+    cooldown: <span class="hljs-number">10</span>
+})
+export <span class="hljs-keyword">default</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Command</span> </span>{}</code></pre></dd>
 								</dl>
 							</div>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -129,6 +138,59 @@
 						</li>
 					</ul>
 				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function">
+					<a name="createresolvers" class="tsd-anchor"></a>
+					<h3>Create<wbr>Resolvers</h3>
+					<ul class="tsd-signatures tsd-kind-function">
+						<li class="tsd-signature tsd-kind-icon">Create<wbr>Resolvers<span class="tsd-signature-symbol">(</span>resolvers<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">CustomUsageArgument</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ClassDecorator</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/skyra-project/skyra-decorators/blob/3bdc4bd/src/starlight-decorators.ts#L47">starlight-decorators.ts:47</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Applies a set of custom resolvers to a command through a decorator</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>since</dt>
+									<dd><p>2.1.0</p>
+									</dd>
+									<dt>copyright</dt>
+									<dd><p>2020 Gryffon Bellish</p>
+									</dd>
+									<dt>license</dt>
+									<dd><p>MIT</p>
+									</dd>
+									<dt>example</dt>
+									<dd><pre><code><span class="hljs-type">CreateResolvers</span>([
+    [
+        <span class="hljs-symbol">&#x27;ke</span>y&#x27;,
+        (arg, _possible, message, [action]) =&gt; {
+            <span class="hljs-keyword">if</span> (action === <span class="hljs-symbol">&#x27;sho</span>w&#x27; || arg) <span class="hljs-keyword">return</span> arg || &#x27;&#x27;;
+            <span class="hljs-keyword">throw</span> message.language.get(<span class="hljs-symbol">&#x27;COMMAND_CONF_NOKE</span>Y&#x27;);
+        }
+    ]
+])
+export <span class="hljs-keyword">default</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Command</span> </span>{}</code></pre></dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>resolvers: <span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">CustomUsageArgument</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol">[]</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Array of custom resolvers to apply to a command</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">ClassDecorator</span></h4>
+						</li>
+					</ul>
+				</section>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-has-type-parameter">
 					<a name="createclassdecorator" class="tsd-anchor"></a>
 					<h3>create<wbr>Class<wbr>Decorator</h3>
@@ -139,7 +201,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/skyra-project/skyra-decorators/blob/efff081/src/index.ts#L26">index.ts:26</a></li>
+									<li>Defined in <a href="https://github.com/skyra-project/skyra-decorators/blob/3bdc4bd/src/utils.ts#L83">utils.ts:83</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -184,7 +246,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/skyra-project/skyra-decorators/blob/efff081/src/index.ts#L69">index.ts:69</a></li>
+									<li>Defined in <a href="https://github.com/skyra-project/skyra-decorators/blob/3bdc4bd/src/utils.ts#L109">utils.ts:109</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -243,7 +305,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/skyra-project/skyra-decorators/blob/efff081/src/index.ts#L16">index.ts:16</a></li>
+									<li>Defined in <a href="https://github.com/skyra-project/skyra-decorators/blob/3bdc4bd/src/utils.ts#L73">utils.ts:73</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -278,6 +340,67 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-function">
+					<a name="requiredpermissions" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> required<wbr>Permissions</h3>
+					<ul class="tsd-signatures tsd-kind-function">
+						<li class="tsd-signature tsd-kind-icon">required<wbr>Permissions<span class="tsd-signature-symbol">(</span>permissionsResolvable<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">PermissionsResolvable</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">MethodDecorator</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/skyra-project/skyra-decorators/blob/3bdc4bd/src/core-decorators.ts#L65">core-decorators.ts:65</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Allows you to set permissions required for individual methods
+									Requires a few steps of setup</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>example</dt>
+									<dd><p>// 1. Module augment Klasa with the following code:
+											declare module &#39;klasa&#39; {
+											interface Language {
+											PERMISSIONS: PermissionStrings; // Import this interface from this lib
+											}
+										}</p>
+										<p>// 2. In your language file create a property:
+											public PERMISSIONS = {
+											ADMINISTRATOR: &#39;Administrator&#39;,
+											VIEW_AUDIT_LOG: &#39;View Audit Log&#39;,
+											MANAGE_GUILD: &#39;Manage Server&#39;,
+											MANAGE_ROLES: &#39;Manage Roles&#39;,
+											MANAGE_CHANNELS: &#39;Manage Channels&#39;,
+											KICK_MEMBERS: &#39;Kick Members&#39;,
+											BAN_MEMBERS: &#39;Ban Members&#39;,
+											// ..etc
+										}</p>
+									</dd>
+									<dt>since</dt>
+									<dd><p>2.1.0</p>
+									</dd>
+									<dt>remark</dt>
+									<dd><p>In particular useful for subcommand methods</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>permissionsResolvable: <span class="tsd-signature-type">PermissionsResolvable</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>Permissions that the method should have</p>
+										</div>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">MethodDecorator</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function">
 					<a name="requiresdmcontext" class="tsd-anchor"></a>
 					<h3>requiresDMContext</h3>
 					<ul class="tsd-signatures tsd-kind-function">
@@ -287,7 +410,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/skyra-project/skyra-decorators/blob/efff081/src/index.ts#L106">index.ts:106</a></li>
+									<li>Defined in <a href="https://github.com/skyra-project/skyra-decorators/blob/3bdc4bd/src/core-decorators.ts#L96">core-decorators.ts:96</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -323,7 +446,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/skyra-project/skyra-decorators/blob/efff081/src/index.ts#L97">index.ts:97</a></li>
+									<li>Defined in <a href="https://github.com/skyra-project/skyra-decorators/blob/3bdc4bd/src/core-decorators.ts#L87">core-decorators.ts:87</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -359,7 +482,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/skyra-project/skyra-decorators/blob/efff081/src/index.ts#L88">index.ts:88</a></li>
+									<li>Defined in <a href="https://github.com/skyra-project/skyra-decorators/blob/3bdc4bd/src/core-decorators.ts#L35">core-decorators.ts:35</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -409,8 +532,14 @@
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/inhibitor.html" class="tsd-kind-icon">Inhibitor</a>
 					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/permissionstrings.html" class="tsd-kind-icon">Permission<wbr>Strings</a>
+					</li>
 					<li class=" tsd-kind-function tsd-has-type-parameter">
 						<a href="globals.html#applyoptions" class="tsd-kind-icon">Apply<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#createresolvers" class="tsd-kind-icon">Create<wbr>Resolvers</a>
 					</li>
 					<li class=" tsd-kind-function tsd-has-type-parameter">
 						<a href="globals.html#createclassdecorator" class="tsd-kind-icon">create<wbr>Class<wbr>Decorator</a>
@@ -420,6 +549,9 @@
 					</li>
 					<li class=" tsd-kind-function">
 						<a href="globals.html#createmethoddecorator" class="tsd-kind-icon">create<wbr>Method<wbr>Decorator</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#requiredpermissions" class="tsd-kind-icon">required<wbr>Permissions</a>
 					</li>
 					<li class=" tsd-kind-function">
 						<a href="globals.html#requiresdmcontext" class="tsd-kind-icon">requiresDMContext</a>
@@ -439,6 +571,9 @@
 	<div class="container">
 		<h2>Legend</h2>
 		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
+			</ul>
 		</div>
 	</div>
 </footer>
