@@ -4,6 +4,7 @@
 		"target": "ES2019",
 		"declaration": true,
 		"declarationMap": true,
-		"removeComments": false
+		"removeComments": false,
+		"importsNotUsedAsValues": "error"
 	}
 }

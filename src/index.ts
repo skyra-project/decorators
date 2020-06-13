@@ -1,5 +1,5 @@
-import { Piece, PieceOptions, Store } from '@klasa/core';
-import { Constructor, KlasaMessage } from 'klasa';
+import type { Piece, PieceOptions, Store } from '@klasa/core';
+import type { Constructor, KlasaMessage } from 'klasa';
 
 /**
  * Utility to make a method decorator with lighter syntax and inferred types.
