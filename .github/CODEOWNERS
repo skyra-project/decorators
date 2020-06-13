@@ -1,7 +1,6 @@
-# Kyra
-/src/ @favna
-/test/ @favna
+# Owners
+/src/ @kyranet @favna
+/tests/ @kyranet @favna
 
-# Favna
-/src/ @favna
-/test/ @favna
+# Pyro owns his own code
+/src/starlight-decorators @PyroTechniac
