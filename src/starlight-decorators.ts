@@ -28,7 +28,8 @@ import { createClassDecorator } from './utils';
 
 /**
  * Applies a set of custom resolvers to a command through a decorator
- *```ts
+ *
+ * ```ts
  *	CreateResolvers([
  *		[
  *			'key',
@@ -38,7 +39,7 @@ import { createClassDecorator } from './utils';
  *			}
  *		]
  *	])
- *```
+ * ```
  * @since 2.1.0
  * @copyright 2020 Gryffon Bellish
  * @license MIT

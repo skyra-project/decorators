@@ -4,13 +4,14 @@ import { createClassDecorator, createFunctionInhibitor, Fallback } from './utils
 
 /**
  * Decorator function that applies given options to any Klasa piece
- *```ts
+ *
+ * ```ts
  *	ApplyOptions<CommandOptions>({
  *		name: 'test',
  *		cooldown: 10
  *	})
  *	export default class extends Command {}
- *```
+ * ```
  * @since 1.0.0
  * @param options The options to pass to the piece constructor
  */
@@ -38,7 +39,8 @@ export function requiresPermission(value: number, fallback: Fallback = (): void 
 /**
  * Allows you to set permissions required for individual methods
  * Requires a few steps of setup
- *```ts
+ *
+ * ```ts
  *	// 1. Module augment Klasa with the following code:
  *	declare module 'klasa' {
  *		interface Language {
@@ -57,7 +59,7 @@ export function requiresPermission(value: number, fallback: Fallback = (): void 
  *		BAN_MEMBERS: 'Ban Members',
  *		// ..etc
  *	}
- *```
+ * ```
  * @since 2.1.0
  * @remark In particular useful for subcommand methods
  * @param permissionsResolvable Permissions that the method should have

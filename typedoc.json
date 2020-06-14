@@ -8,5 +8,6 @@
 	"excludePrivate": true,
 	"excludeProtected": true,
 	"excludeNotExported": true,
-	"tsconfig": "./tsconfig.base.json"
+	"tsconfig": "./tsconfig.base.json",
+	"theme" : "./node_modules/eledoc/bin/default"
 }

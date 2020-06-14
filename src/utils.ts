@@ -60,14 +60,15 @@ export interface PermissionStrings {
 
 /**
  * Utility to make a method decorator with lighter syntax and inferred types.
- *```ts
+ *
+ * ```ts
  * // Enumerable function
  *	function enumerable(value: boolean) {
  *		return createMethodDecorator((_target, _propertyKey, descriptor) => {
  *			descriptor.enumerable = value;
  *		});
  *	}
- *```
+ * ```
  * @since 1.0.0
  * @param fn The method to decorate
  */
@@ -87,7 +88,8 @@ export function createClassDecorator<TFunction extends (...args: any[]) => void>
 
 /**
  * Utility to make function inhibitors.
- *```ts
+ *
+ * ```ts
  *	// No fallback (returns undefined)
  *	function requiresPermission(value: number) {
  *		return createFunctionInhibitor((message: KlasaMessage) =>
@@ -102,7 +104,7 @@ export function createClassDecorator<TFunction extends (...args: any[]) => void>
  *		return createFunctionInhibitor((message: KlasaMessage) =>
  *			message.hasAtLeastPermissionLevel(value), fallback);
  *	}
- *```
+ * ```
  * @since 1.0.0
  * @param inhibitor The function that defines whether or not the function should be run, returning the returned value from fallback
  * @param fallback The fallback value that defines what the method should return in case the inhibitor fails
