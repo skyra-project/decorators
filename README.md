@@ -1,6 +1,6 @@
 <div align="center">
   <p>
-	<h1> @skyra/decorators </h1> 
+	<h1> @skyra/<wbr />decorators </h1> 
 	<h3> TypeScript decorators for Klasa Projects </h3>
   </p>
 </div>

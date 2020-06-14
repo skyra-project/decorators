@@ -46,6 +46,7 @@ jobs:
 
           echo -e "\n# Move the generated docs to the newly-checked-out repo, to be committed and pushed"
           rsync -vau docs/ out/
+          rsync -va README.md out/
 
           echo -e "\n# Commit and push"
           cd out
