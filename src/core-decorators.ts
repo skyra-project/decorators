@@ -19,8 +19,8 @@ export function ApplyOptions<T extends PieceOptions>(options: T): ClassDecorator
 	return createClassDecorator(
 		(target: Constructor<Piece>) =>
 			class extends target {
-				public constructor(store: Store<Piece>, file: string[], directory: string) {
-					super(store, file, directory, options);
+				public constructor(store: Store<Piece>, file: string[], directory: string, baseOptions: PieceOptions = {}) {
+					super(store, file, directory, { ...baseOptions, ...options });
 				}
 			}
 	);

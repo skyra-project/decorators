@@ -3846,7 +3846,7 @@ kind-of@^6.0.0, kind-of@^6.0.2, kind-of@^6.0.3:
 
 "klasa@github:dirigeants/klasa#build":
   version "0.6.0-dev"
-  resolved "https://codeload.github.com/dirigeants/klasa/tar.gz/ce1f8ac1c3801ef1c0aa64b454c967dfeea79da2"
+  resolved "https://codeload.github.com/dirigeants/klasa/tar.gz/a2edb29f3d9ef081d1a4d1ca5b02aa8c871fe641"
   dependencies:
     "@klasa/cache" "^0.0.3"
     "@klasa/console" "^0.0.3"
@@ -3915,9 +3915,9 @@ lint-staged@^10.2.10:
     stringify-object "^3.3.0"
 
 listr2@^2.1.0:
-  version "2.1.3"
-  resolved "https://registry.yarnpkg.com/listr2/-/listr2-2.1.3.tgz#f527e197de12ad8c488c566921fa2da34cbc67f6"
-  integrity sha512-6oy3QhrZAlJGrG8oPcRp1hix1zUpb5AvyvZ5je979HCyf48tIj3Hn1TG5+rfyhz30t7HfySH/OIaVbwrI2kruA==
+  version "2.1.7"
+  resolved "https://registry.yarnpkg.com/listr2/-/listr2-2.1.7.tgz#8107c12c699bac778f1567739298052d8ebb9c27"
+  integrity sha512-XCC1sWLkBFFIMIRwG/LedgHUzN2XLEo02ZqXn6fwuP0GlXGE5BCuL6EAbQFb4vZB+++YEonzEXDPWQe+jCoF6Q==
   dependencies:
     chalk "^4.0.0"
     cli-truncate "^2.1.0"
