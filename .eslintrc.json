@@ -1,20 +1,11 @@
 {
 	"extends": "bamboo",
-	"env": {
-		"jest": true
-	},
 	"rules": {
 		// Handled by Prettier
 		"padded-blocks": "off",
 		"space-before-function-paren": "off",
 		"arrow-parens": "off",
 
-		// Invalid for this project
-		"@typescript-eslint/no-unsafe-return": "off",
-		"@typescript-eslint/no-unsafe-assignment": "off",
-		"@typescript-eslint/no-throw-literal": "off",
-		"@typescript-eslint/no-unsafe-call": "off",
-		"@typescript-eslint/no-unsafe-member-access": "off",
 		"@typescript-eslint/naming-convention": [
 			"error",
 			{
