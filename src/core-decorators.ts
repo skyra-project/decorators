@@ -4,14 +4,15 @@ import { createClassDecorator, createFunctionInhibitor, Fallback } from './utils
 
 /**
  * Decorator function that applies given options to any Klasa piece
- * @since 1.0.0
- * @param options The options to pass to the piece constructor
- * @example
+ *```ts
  *	ApplyOptions<CommandOptions>({
  *		name: 'test',
  *		cooldown: 10
  *	})
  *	export default class extends Command {}
+ *```
+ * @since 1.0.0
+ * @param options The options to pass to the piece constructor
  */
 export function ApplyOptions<T extends PieceOptions>(options: T): ClassDecorator {
 	return createClassDecorator(
@@ -37,25 +38,26 @@ export function requiresPermission(value: number, fallback: Fallback = (): void 
 /**
  * Allows you to set permissions required for individual methods
  * Requires a few steps of setup
- * @example
- * // 1. Module augment Klasa with the following code:
- * declare module 'klasa' {
- *     interface Language {
- *        PERMISSIONS: PermissionStrings; // Import this interface from this lib
- *     }
- * }
+ *```ts
+ *	// 1. Module augment Klasa with the following code:
+ *	declare module 'klasa' {
+ *		interface Language {
+ *			PERMISSIONS: PermissionStrings; // Import this interface from this lib
+ *		}
+ *	}
  *
- * // 2. In your language file create a property:
- * public PERMISSIONS = {
- *     ADMINISTRATOR: 'Administrator',
- *     VIEW_AUDIT_LOG: 'View Audit Log',
- *     MANAGE_GUILD: 'Manage Server',
- *     MANAGE_ROLES: 'Manage Roles',
- *     MANAGE_CHANNELS: 'Manage Channels',
- *     KICK_MEMBERS: 'Kick Members',
- *     BAN_MEMBERS: 'Ban Members',
- *     // ..etc
- * }
+ *	// 2. In your language file create a property:
+ *	public PERMISSIONS = {
+ *		ADMINISTRATOR: 'Administrator',
+ *		VIEW_AUDIT_LOG: 'View Audit Log',
+ *		MANAGE_GUILD: 'Manage Server',
+ *		MANAGE_ROLES: 'Manage Roles',
+ *		MANAGE_CHANNELS: 'Manage Channels',
+ *		KICK_MEMBERS: 'Kick Members',
+ *		BAN_MEMBERS: 'Ban Members',
+ *		// ..etc
+ *	}
+ *```
  * @since 2.1.0
  * @remark In particular useful for subcommand methods
  * @param permissionsResolvable Permissions that the method should have
@@ -67,6 +69,7 @@ export const requiredPermissions = (permissionsResolvable: PermissionsResolvable
 
 		if (missing.length) {
 			const permissions = message.language.PERMISSIONS;
+			// eslint-disable-next-line @typescript-eslint/no-throw-literal
 			throw message.language.get(
 				'INHIBITOR_MISSING_BOT_PERMS',
 				missing.map((permission) => permissions[permission])
