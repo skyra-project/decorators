@@ -28,11 +28,7 @@ import { createClassDecorator } from './utils';
 
 /**
  * Applies a set of custom resolvers to a command through a decorator
- * @since 2.1.0
- * @copyright 2020 Gryffon Bellish
- * @license MIT
- * @param resolvers Array of custom resolvers to apply to a command
- * @example
+ *```ts
  *	CreateResolvers([
  *		[
  *			'key',
@@ -42,7 +38,11 @@ import { createClassDecorator } from './utils';
  *			}
  *		]
  *	])
- *	export default class extends Command {}
+ *```
+ * @since 2.1.0
+ * @copyright 2020 Gryffon Bellish
+ * @license MIT
+ * @param resolvers Array of custom resolvers to apply to a command
  */
 export function CreateResolvers(resolvers: [string, ArgResolverCustomMethod][]): ClassDecorator {
 	return createClassDecorator(
