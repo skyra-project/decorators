@@ -2044,10 +2044,10 @@ escodegen@^1.14.1:
   optionalDependencies:
     source-map "~0.6.1"
 
-eslint-config-bamboo@^5.0.0:
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/eslint-config-bamboo/-/eslint-config-bamboo-5.0.0.tgz#94a40d2f1d2effc0ae331e2d1ee420f8ba7e7804"
-  integrity sha512-HT2FspssSFRZO9jjO4CkEmunfYvAESNamDovZ/QfRNrB5QYgBcwEa/jpEZ1q2XMQTCTSmzbx+SYK0u8JOkMlCg==
+eslint-config-bamboo@^5.1.0:
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/eslint-config-bamboo/-/eslint-config-bamboo-5.1.0.tgz#9427be366f60056231c80649063e97b1749a8805"
+  integrity sha512-UOeq82PrVv//6VkgCQa5sOMOuIAQvtjCTSSV/imTrEE78ygBA/ojBgV3s6/enrctRWIKoDsc73YGQgLa63iaEA==
 
 eslint-scope@^5.0.0, eslint-scope@^5.1.0:
   version "5.1.0"
