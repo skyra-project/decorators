@@ -65,7 +65,7 @@ export function requiresPermission(value: number, fallback: Fallback = (): void 
 export const requiredPermissions = (permissionsResolvable: PermissionsResolvable): MethodDecorator => {
 	const resolved = Permissions.resolve(permissionsResolvable);
 	return createFunctionInhibitor(async (message: KlasaMessage) => {
-		const missing = (message.channel as TextChannel).permissionsFor(message.guild!.me ?? (await message.guild!.members.fetch(message.client.user!.id)))?.missing(resolved) ?? [];
+		const missing = (message.channel as TextChannel).permissionsFor(message.guild!.me ?? (await message.guild!.members.fetch(message.client.user!.id))).missing(resolved) ?? [];
 
 		if (missing.length) {
 			const permissions = message.language.PERMISSIONS;
