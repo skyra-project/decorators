@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.1](https://github.com/skyra-project/skyra-decorators/compare/v1.1.0...v1.1.1) (2020-06-14)
+
+
+### Bug Fixes
+
+* **core:** fixed ApplyOptions breaking any commands using it ([eb3cb77](https://github.com/skyra-project/skyra-decorators/commit/eb3cb77e92fdf677bc1dfcbd31ef69b24b3e12b6))
+* **core:** properly pass rest options for ApplyOptions ([937ded2](https://github.com/skyra-project/skyra-decorators/commit/937ded263eb5eb233d20f2515453484129a2df91))
+
 ## [1.1.0](https://github.com/skyra-project/skyra-decorators/compare/v2.0.0...v1.1.0) (2020-06-13)
 
 
