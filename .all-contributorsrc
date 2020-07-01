@@ -34,6 +34,17 @@
         "review",
         "test"
       ]
+    },
+    {
+      "login": "PyroTechniac",
+      "name": "Gryffon Bellish",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/39341355?v=4",
+      "profile": "https://github.com/PyroTechniac",
+      "contributions": [
+        "code",
+        "review",
+        "test"
+      ]
     }
   ],
   "contributorsPerLine": 7
