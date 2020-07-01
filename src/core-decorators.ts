@@ -1,4 +1,4 @@
-import { Permissions, PermissionsResolvable, Piece, PieceOptions, Store, TextChannel } from '@klasa/core';
+import { Permissions, PermissionsResolvable, Piece, PieceOptions, TextChannel } from '@klasa/core';
 import type { Constructor, KlasaMessage } from 'klasa';
 import { createClassDecorator, createFunctionInhibitor, Fallback } from './utils';
 
@@ -18,11 +18,13 @@ import { createClassDecorator, createFunctionInhibitor, Fallback } from './utils
 export function ApplyOptions<T extends PieceOptions>(options: T): ClassDecorator {
 	return createClassDecorator(
 		(target: Constructor<Piece>) =>
-			class extends target {
-				public constructor(store: Store<Piece>, file: string[], directory: string, baseOptions: PieceOptions = {}) {
-					super(store, file, directory, { ...baseOptions, ...options });
+			new Proxy(target, {
+				construct: (ctor, [store, file, directory, baseOptions = {}]) => new ctor(store, file, directory, { ...baseOptions, ...options }),
+				get: (target, prop) => {
+					const value = Reflect.get(target, prop);
+					return typeof value === 'function' ? (...args: readonly unknown[]) => value.apply(target, args) : value;
 				}
-			}
+			})
 	);
 }
 

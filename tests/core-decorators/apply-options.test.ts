@@ -18,4 +18,5 @@ test('ApplyOptions Decorator', () => {
 	expect(instance.name).toBe('test');
 	expect(instance.cooldown).toBe(10);
 	expect(instance.guarded).toBe(false);
+	expect(Object.getOwnPropertyDescriptor(instance.constructor.prototype, 'getName')).toBeDefined();
 });
