@@ -122,7 +122,12 @@ export function createFunctionInhibitor(inhibitor: Inhibitor, fallback: Fallback
 	});
 }
 
-/** @hidden */
+/**
+ * Creates a new proxy to efficiently add properties to class without creating subclasses
+ * @param target The constructor of the class to modify
+ * @param handler The handler function to modify the constructor behaviour for the target
+ * @hidden
+ */
 // eslint-disable-next-line @typescript-eslint/ban-types
 export function createProxy<T extends object>(target: T, handler: Omit<ProxyHandler<T>, 'get'>): T {
 	return new Proxy(target, {
