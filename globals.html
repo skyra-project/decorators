@@ -75,6 +75,7 @@
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-function tsd-has-type-parameter"><a href="globals.html#applyoptions" class="tsd-kind-icon">Apply<wbr>Options</a></li>
+								<li class="tsd-kind-function"><a href="globals.html#createresolver" class="tsd-kind-icon">Create<wbr>Resolver</a></li>
 								<li class="tsd-kind-function"><a href="globals.html#createresolvers" class="tsd-kind-icon">Create<wbr>Resolvers</a></li>
 								<li class="tsd-kind-function tsd-has-type-parameter"><a href="globals.html#createclassdecorator" class="tsd-kind-icon">create<wbr>Class<wbr>Decorator</a></li>
 								<li class="tsd-kind-function"><a href="globals.html#createfunctioninhibitor" class="tsd-kind-icon">create<wbr>Function<wbr>Inhibitor</a></li>
@@ -94,13 +95,13 @@
 					<a name="applyoptions" class="tsd-anchor"></a>
 					<h3>Apply<wbr>Options</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-has-type-parameter">
-						<li class="tsd-signature tsd-kind-icon">Apply<wbr>Options&lt;T&gt;<span class="tsd-signature-symbol">(</span>options<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ClassDecorator</span></li>
+						<li class="tsd-signature tsd-kind-icon">Apply<wbr>Options&lt;T&gt;<span class="tsd-signature-symbol">(</span>optionsOrFn<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">(</span>client<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">KlasaClient</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ClassDecorator</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/skyra-project/skyra-decorators/blob/39421bb/src/core-decorators.ts#L18">core-decorators.ts:18</a></li>
+									<li>Defined in <a href="https://github.com/skyra-project/decorators/blob/77fe4a5/src/core-decorators.ts#L18">core-decorators.ts:18</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -127,9 +128,47 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>options: <span class="tsd-signature-type">T</span></h5>
+									<h5>optionsOrFn: <span class="tsd-signature-type">T</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">(</span>client<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">KlasaClient</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">ClassDecorator</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function">
+					<a name="createresolver" class="tsd-anchor"></a>
+					<h3>Create<wbr>Resolver</h3>
+					<ul class="tsd-signatures tsd-kind-function">
+						<li class="tsd-signature tsd-kind-icon">Create<wbr>Resolver<span class="tsd-signature-symbol">(</span>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, resolverFn<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">CustomUsageArgument</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ClassDecorator</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/skyra-project/decorators/blob/77fe4a5/src/starlight-decorators.ts#L72">starlight-decorators.ts:72</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Applies a single custom resolver to a command through a decorator</p>
+								</div>
+								<pre><code class="language-ts">    CreateResolver(<span class="hljs-string">&#x27;key&#x27;</span>, <span class="hljs-function">(<span class="hljs-params">arg, _possible, message, [action]</span>) =&gt;</span> {
+        <span class="hljs-keyword">if</span> (action === <span class="hljs-string">&#x27;show&#x27;</span> || arg) <span class="hljs-keyword">return</span> arg || <span class="hljs-string">&#x27;&#x27;</span>;
+        <span class="hljs-keyword">throw</span> message.language.get(<span class="hljs-string">&#x27;COMMAND_CONF_NOKEY&#x27;</span>);
+    })</code></pre>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>name: <span class="tsd-signature-type">string</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>The options to pass to the piece constructor</p>
+										<p>Name of the custom argument resolver</p>
+									</div>
+								</li>
+								<li>
+									<h5>resolverFn: <span class="tsd-signature-type">CustomUsageArgument</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Function describing how to resolve the argument</p>
 									</div>
 								</li>
 							</ul>
@@ -147,7 +186,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/skyra-project/skyra-decorators/blob/39421bb/src/starlight-decorators.ts#L48">starlight-decorators.ts:48</a></li>
+									<li>Defined in <a href="https://github.com/skyra-project/decorators/blob/77fe4a5/src/starlight-decorators.ts#L48">starlight-decorators.ts:48</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -198,7 +237,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/skyra-project/skyra-decorators/blob/39421bb/src/utils.ts#L85">utils.ts:85</a></li>
+									<li>Defined in <a href="https://github.com/skyra-project/decorators/blob/77fe4a5/src/utils.ts#L85">utils.ts:85</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -243,7 +282,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/skyra-project/skyra-decorators/blob/39421bb/src/utils.ts#L112">utils.ts:112</a></li>
+									<li>Defined in <a href="https://github.com/skyra-project/decorators/blob/77fe4a5/src/utils.ts#L112">utils.ts:112</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -299,7 +338,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/skyra-project/skyra-decorators/blob/39421bb/src/utils.ts#L75">utils.ts:75</a></li>
+									<li>Defined in <a href="https://github.com/skyra-project/decorators/blob/77fe4a5/src/utils.ts#L75">utils.ts:75</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -341,7 +380,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/skyra-project/skyra-decorators/blob/39421bb/src/core-decorators.ts#L69">core-decorators.ts:69</a></li>
+									<li>Defined in <a href="https://github.com/skyra-project/decorators/blob/77fe4a5/src/core-decorators.ts#L68">core-decorators.ts:68</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -401,7 +440,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/skyra-project/skyra-decorators/blob/39421bb/src/core-decorators.ts#L101">core-decorators.ts:101</a></li>
+									<li>Defined in <a href="https://github.com/skyra-project/decorators/blob/77fe4a5/src/core-decorators.ts#L100">core-decorators.ts:100</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -437,7 +476,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/skyra-project/skyra-decorators/blob/39421bb/src/core-decorators.ts#L92">core-decorators.ts:92</a></li>
+									<li>Defined in <a href="https://github.com/skyra-project/decorators/blob/77fe4a5/src/core-decorators.ts#L91">core-decorators.ts:91</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -473,7 +512,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/skyra-project/skyra-decorators/blob/39421bb/src/core-decorators.ts#L37">core-decorators.ts:37</a></li>
+									<li>Defined in <a href="https://github.com/skyra-project/decorators/blob/77fe4a5/src/core-decorators.ts#L36">core-decorators.ts:36</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -528,6 +567,9 @@
 					</li>
 					<li class=" tsd-kind-function tsd-has-type-parameter">
 						<a href="globals.html#applyoptions" class="tsd-kind-icon">Apply<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#createresolver" class="tsd-kind-icon">Create<wbr>Resolver</a>
 					</li>
 					<li class=" tsd-kind-function">
 						<a href="globals.html#createresolvers" class="tsd-kind-icon">Create<wbr>Resolvers</a>
