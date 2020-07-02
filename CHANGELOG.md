@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.2.0](https://github.com/skyra-project/decorators/compare/v2.1.2...v2.2.0) (2020-07-02)
+
+
+### Features
+
+* allow ApplyOptions to take a function ([#24](https://github.com/skyra-project/decorators/issues/24)) ([cbcabdc](https://github.com/skyra-project/decorators/commit/cbcabdc03cb937364cde72a3d4d393cfbf474e55))
+* **apply-options:** add extendables support ([#26](https://github.com/skyra-project/decorators/issues/26)) ([39421bb](https://github.com/skyra-project/decorators/commit/39421bb69042a75d2b0257c6726436f432448281))
+
 ### [2.1.2](https://github.com/skyra-project/decorators/compare/v2.1.1...v2.1.2) (2020-06-14)
 
 ### Bug Fixes
