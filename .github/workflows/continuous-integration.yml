@@ -24,7 +24,7 @@ jobs:
           path: node_modules
           key: ${{ runner.os }}-12-${{ hashFiles('**/yarn.lock') }}
       - name: Install Dependencies
-        run: yarn --ignore-scripts
+        run: yarn --ignore-scripts --frozen-lockfile
       - name: Run ESLint
         uses: icrawl/action-eslint@v1
 
@@ -35,7 +35,6 @@ jobs:
       matrix:
         node_version: [12, 14]
         os: [ubuntu-latest, windows-latest, macOS-latest]
-
     steps:
       - name: Checkout Project
         uses: actions/checkout@v2
@@ -49,9 +48,7 @@ jobs:
           path: node_modules
           key: ${{ runner.os }}-${{ matrix.node_version }}-${{ hashFiles(matrix.os == 'windows-latest' && '**\yarn.lock' || '**/yarn.lock') }}
       - name: Install Dependencies
-        run: yarn
-      - name: Build Project
-        run: yarn build
+        run: yarn --ignore-scripts --frozen-lockfile
       - name: Test
         run: yarn test
 
@@ -71,7 +68,7 @@ jobs:
           path: node_modules
           key: ${{ runner.os }}-12-${{ hashFiles('**/yarn.lock') }}
       - name: Install Dependencies
-        run: yarn --ignore-scripts
+        run: yarn --ignore-scripts --frozen-lockfile
       - name: Compile TypeScript
         uses: icrawl/action-tsc@v1
         with:
