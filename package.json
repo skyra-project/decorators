@@ -54,10 +54,10 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/skyra-project/skyra-decorators.git"
+		"url": "git+https://github.com/skyra-project/decorators.git"
 	},
 	"bugs": {
-		"url": "https://github.com/skyra-project/skyra-decorators/issues"
+		"url": "https://github.com/skyra-project/decorators/issues"
 	},
 	"keywords": [
 		"skyra",
