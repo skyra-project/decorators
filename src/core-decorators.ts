@@ -1,6 +1,6 @@
 import { Permissions, PermissionsResolvable, Piece, PieceOptions, TextChannel } from '@klasa/core';
-import type { Constructor, KlasaMessage } from 'klasa';
-import { createClassDecorator, createFunctionInhibitor, Fallback } from './utils';
+import type { Constructor, KlasaClient, KlasaMessage } from 'klasa';
+import { createClassDecorator, createFunctionInhibitor, createProxy, Fallback } from './utils';
 
 /**
  * Decorator function that applies given options to any Klasa piece
@@ -15,16 +15,15 @@ import { createClassDecorator, createFunctionInhibitor, Fallback } from './utils
  * @since 1.0.0
  * @param options The options to pass to the piece constructor
  */
-export function ApplyOptions<T extends PieceOptions>(options: T): ClassDecorator {
-	return createClassDecorator(
-		(target: Constructor<Piece>) =>
-			new Proxy(target, {
-				construct: (ctor, [store, file, directory, baseOptions = {}]) => new ctor(store, file, directory, { ...baseOptions, ...options }),
-				get: (target, prop) => {
-					const value = Reflect.get(target, prop);
-					return typeof value === 'function' ? (...args: readonly unknown[]) => value.apply(target, args) : value;
-				}
-			})
+export function ApplyOptions<T extends PieceOptions>(optionsOrFn: T | ((client: KlasaClient) => T)): ClassDecorator {
+	return createClassDecorator((target: Constructor<Piece>) =>
+		createProxy(target, {
+			construct: (ctor, [store, file, directory, baseOptions = {}]) =>
+				new ctor(store, file, directory, {
+					...baseOptions,
+					...(typeof optionsOrFn === 'function' ? optionsOrFn(store.client) : optionsOrFn)
+				})
+		})
 	);
 }
 

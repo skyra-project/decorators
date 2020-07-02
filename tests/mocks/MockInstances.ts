@@ -1,6 +1,6 @@
 import { Command, CommandStore, KlasaClient } from 'klasa';
 
-export const client = new KlasaClient();
+export const client = new KlasaClient({ language: 'en-GB' });
 
 export class Message {
 	public content: string;

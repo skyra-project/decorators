@@ -23,8 +23,8 @@
  */
 
 import type { Constructor } from '@klasa/core';
-import type { Command, CommandOptions, CommandStore, CustomUsageArgument } from 'klasa';
-import { createClassDecorator } from './utils';
+import type { Command, CustomUsageArgument } from 'klasa';
+import { createClassDecorator, createProxy } from './utils';
 
 /**
  * Applies a set of custom resolvers to a command through a decorator
@@ -46,16 +46,31 @@ import { createClassDecorator } from './utils';
  * @param resolvers Array of custom resolvers to apply to a command
  */
 export function CreateResolvers(resolvers: [string, CustomUsageArgument][]): ClassDecorator {
-	return createClassDecorator(
-		(target: Constructor<Command>) =>
-			class extends target {
-				public constructor(store: CommandStore, directory: string, files: readonly string[], options: CommandOptions) {
-					super(store, directory, files, options);
-
-					for (const resolver of resolvers) this.createCustomResolver(...resolver);
-				}
+	return createClassDecorator((target: Constructor<Command>) =>
+		createProxy(target, {
+			construct: (ctor, [store, directory, files, options]): Command => {
+				const command = new ctor(store, directory, files, options);
+				for (const resolver of resolvers) command.createCustomResolver(...resolver);
+				return command;
 			}
+		})
 	);
+}
+
+/**
+ * Applies a single custom resolver to a command through a decorator
+ *
+ * ```ts
+ *	CreateResolver('key', (arg, _possible, message, [action]) => {
+ *		if (action === 'show' || arg) return arg || '';
+ *		throw message.language.get('COMMAND_CONF_NOKEY');
+ *	})
+ * ```
+ * @param name Name of the custom argument resolver
+ * @param resolverFn Function describing how to resolve the argument
+ */
+export function CreateResolver(name: string, resolverFn: CustomUsageArgument): ClassDecorator {
+	return CreateResolvers([[name, resolverFn]]);
 }
 
 // TODO: Add SetRoute decorator when KDH has been updated to support @klasa/core and klasa >= 0.6.0

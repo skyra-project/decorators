@@ -5,6 +5,8 @@
 		"padded-blocks": "off",
 		"space-before-function-paren": "off",
 		"arrow-parens": "off",
+		"@typescript-eslint/no-throw-literal": "off",
+		"function-paren-newline": "off",
 
 		"@typescript-eslint/naming-convention": [
 			"error",

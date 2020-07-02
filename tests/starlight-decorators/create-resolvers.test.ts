@@ -1,8 +1,8 @@
 import { Cache } from '@klasa/cache';
 import { client, MockCommandStore } from '@mocks/MockInstances';
+import { ApplyOptions } from '@src/core-decorators';
 import { CreateResolvers } from '@src/starlight-decorators';
 import { Command, CommandOptions, CustomUsageArgument } from 'klasa';
-import { ApplyOptions } from '@src/core-decorators';
 
 describe('CreateResolvers Decorator', () => {
 	const mockCommandStore = new MockCommandStore('name', client);
@@ -74,8 +74,6 @@ describe('CreateResolvers Decorator', () => {
 		const instance = new TestCommand(mockCommandStore, __dirname, [__filename]);
 
 		expect(instance.name).toEqual('test');
-		expect(instance.cooldown).toEqual(10);
-
 		expect(instance.usage.customResolvers.firstValue).toEqual(expect.any(Function));
 		expect(instance.usage.customResolvers.firstKey).toEqual(receivedResolvers.firstKey);
 
