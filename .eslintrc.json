@@ -1,5 +1,5 @@
 {
-	"extends": "bamboo",
+	"extends": "@skyra",
 	"rules": {
 		// Handled by Prettier
 		"padded-blocks": "off",
