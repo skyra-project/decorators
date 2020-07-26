@@ -7,7 +7,7 @@
 
 <div align="center">
 	<p>
-		<a href="https://github.com/skyra-project/decorators/blob/master/LICENSE.md">
+		<a href="https://github.com/skyra-project/decorators/blob/main/LICENSE.md">
 			<img src="https://img.shields.io/github/license/skyra-project/decorators?logo=github&maxAge=3600" alt="NPM version" />
 		</a>
 	</p>
@@ -42,7 +42,7 @@ To contribute to this repository, feel free to create a new fork of the reposito
 submit a pull request. We highly suggest [ESLint](https://eslint.org/) to be installed
 in your text editor or IDE of your choice to ensure builds from GitHub Actions do not fail.
 
-1. Fork, clone, and select the **master** branch.
+1. Fork, clone, and select the **main** branch.
 2. Create a new branch in your fork.
 3. Make your changes.
 4. Commit your changes, and push them.
@@ -66,6 +66,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 
 <!-- markdownlint-enable -->
 <!-- prettier-ignore-end -->
+
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
