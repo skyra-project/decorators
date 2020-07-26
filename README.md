@@ -7,7 +7,7 @@
 
 <div align="center">
 	<p>
-		<a href="https://github.com/skyra-project/skyra-decorators/blob/master/LICENSE.md">
+		<a href="https://github.com/skyra-project/skyra-decorators/blob/v1.x/LICENSE.md">
 			<img src="https://img.shields.io/github/license/skyra-project/skyra-decorators?logo=github&maxAge=3600" alt="NPM version" />
 		</a>
 	</p>
@@ -42,7 +42,7 @@ To contribute to this repository, feel free to create a new fork of the reposito
 submit a pull request. We highly suggest [ESLint](https://eslint.org/) to be installed
 in your text editor or IDE of your choice to ensure builds from GitHub Actions do not fail.
 
-1. Fork, clone, and select the **master** branch.
+1. Fork, clone, and select the **v1.x** branch.
 2. Create a new branch in your fork.
 3. Make your changes.
 4. Commit your changes, and push them.
