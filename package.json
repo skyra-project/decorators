@@ -37,6 +37,7 @@
 		"klasa": "github:dirigeants/klasa#build",
 		"lint-staged": "^10.2.13",
 		"prettier": "^2.1.1",
+		"pretty-quick": "^3.0.0",
 		"standard-version": "^9.0.0",
 		"ts-jest": "^26.3.0",
 		"typedoc": "^0.18.0",
@@ -72,7 +73,7 @@
 	"husky": {
 		"hooks": {
 			"commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-			"pre-commit": "yarn lint-staged"
+			"pre-commit": "yarn pretty-quick --staged && yarn lint-staged"
 		}
 	},
 	"commitlint": {
@@ -81,10 +82,7 @@
 		]
 	},
 	"lint-staged": {
-		"*.ts": [
-			"prettier --write",
-			"eslint --fix --ext ts"
-		]
+		"*.{mjs,js,ts}": "eslint --fix --ext mjs,js,ts"
 	},
 	"config": {
 		"commitizen": {
