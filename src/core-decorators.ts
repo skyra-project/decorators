@@ -71,7 +71,7 @@ export const requiredPermissions = (permissionsResolvable: PermissionResolvable)
 			const permissions = message.language.PERMISSIONS;
 			// eslint-disable-next-line @typescript-eslint/no-throw-literal
 			throw message.language.get(
-				'INHIBITOR_MISSING_BOT_PERMS',
+				'inhibitorMissingBotPerms',
 				missing.map((permission) => permissions[permission])
 			);
 		}
