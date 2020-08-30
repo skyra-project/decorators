@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.2.1](https://github.com/skyra-project/skyra-decorators/compare/v1.2.0...v1.2.1) (2020-08-30)
+
+
+### Bug Fixes
+
+* **core:** fixed i18n string for requiredPermissions ([cc5a8eb](https://github.com/skyra-project/skyra-decorators/commit/cc5a8eb39cc306352c56d0ebf71299a609d2b25c))
+
 ## [1.2.0](https://github.com/skyra-project/skyra-decorators/compare/v1.1.1...v1.2.0) (2020-07-26)
 
 
