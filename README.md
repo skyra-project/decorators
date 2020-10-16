@@ -24,7 +24,7 @@
 		<a href="https://depfu.com/github/skyra-project/decorators?project_id=11733">
 			<img src="https://badges.depfu.com/badges/2be62b7690111eea9aef95f7c8ca07fa/count.svg" alt="Depfu" />
 		</a>
-		<a href="https://www.patreon.com/kyranet">
+		<a href="https://donate.skyra.pw/patreon">
 			<img src="https://img.shields.io/badge/donate-patreon-F96854.svg?logo=patreon" alt="Patreon" />
 		</a>
 	</p>
