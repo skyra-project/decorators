@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.0.0](https://github.com/skyra-project/decorators/compare/v2.3.0...v3.0.0) (2020-11-23)
+
+### ⚠ BREAKING CHANGES
+
+-   This package is no longer designed to be used for Klasa Core, which has been
+    discontinued. Furthermore, as Klasa as a whole has been discontinued, we do not recommend using this
+    package in your own projects. Instead you should be looking towards changing to the Sapphire
+    framework (https://github.com/sapphire-project) and using its package, @sapphire/decorators, which
+    has been greatly inspired by, and made by the same developers as @skyra/decorators.
+
+### Features
+
+-   rewrite to DJS v12 + Klasa fork ([26457ea](https://github.com/skyra-project/decorators/commit/26457ea2f68d46c8e6adda1b97ade54501c47b54))
+
 ## [2.3.0](https://github.com/skyra-project/decorators/compare/v2.2.0...v2.3.0) (2020-07-26)
 
 ### Features
