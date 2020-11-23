@@ -48,8 +48,8 @@ import { createClassDecorator, createProxy } from './utils';
 export function CreateResolvers(resolvers: [string, ArgResolverCustomMethod][]): ClassDecorator {
 	return createClassDecorator((target: Constructor<Command>) =>
 		createProxy(target, {
-			construct: (ctor, [store, directory, files, options]): Command => {
-				const command = new ctor(store, directory, files, options);
+			construct: (ctor, [store, files, directory, options]): Command => {
+				const command = new ctor(store, files, directory, options);
 				for (const resolver of resolvers) command.createCustomResolver(...resolver);
 				return command;
 			}

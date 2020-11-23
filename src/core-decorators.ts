@@ -18,8 +18,8 @@ import { createClassDecorator, createFunctionInhibitor, createProxy, Fallback } 
 export function ApplyOptions<T extends PieceOptions>(optionsOrFn: T | ((client: KlasaClient) => T)): ClassDecorator {
 	return createClassDecorator((target: Constructor<Piece>) =>
 		createProxy(target, {
-			construct: (ctor, [store, file, directory, baseOptions = {}]) =>
-				new ctor(store, file, directory, {
+			construct: (ctor, [store, files, directory, baseOptions = {}]) =>
+				new ctor(store, files, directory, {
 					...baseOptions,
 					...(typeof optionsOrFn === 'function' ? optionsOrFn(store.client) : optionsOrFn)
 				})
