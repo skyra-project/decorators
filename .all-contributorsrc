@@ -1,0 +1,81 @@
+{
+	"projectName": "decorators",
+	"projectOwner": "skyra-project",
+	"repoType": "github",
+	"repoHost": "https://github.com",
+	"files": [
+		"README.md"
+	],
+	"imageSize": 100,
+	"commit": true,
+	"commitConvention": "angular",
+	"contributors": [
+		{
+			"login": "Favna",
+			"name": "Jeroen Claassens",
+			"avatar_url": "https://avatars3.githubusercontent.com/u/4019718?v=4",
+			"profile": "https://favware.tech/",
+			"contributions": [
+				"code",
+				"doc",
+				"projectManagement",
+				"review",
+				"test"
+			]
+		},
+		{
+			"login": "kyranet",
+			"name": "Antonio Román",
+			"avatar_url": "https://avatars0.githubusercontent.com/u/24852502?v=4",
+			"profile": "https://github.com/kyranet",
+			"contributions": [
+				"code",
+				"projectManagement",
+				"review",
+				"test"
+			]
+		},
+		{
+			"login": "PyroTechniac",
+			"name": "Gryffon Bellish",
+			"avatar_url": "https://avatars2.githubusercontent.com/u/39341355?v=4",
+			"profile": "https://github.com/PyroTechniac",
+			"contributions": [
+				"code",
+				"review",
+				"test"
+			]
+		},
+		{
+			"login": "vladfrangu",
+			"name": "Vlad Frangu",
+			"avatar_url": "https://avatars3.githubusercontent.com/u/17960496?v=4",
+			"profile": "https://github.com/vladfrangu",
+			"contributions": [
+				"code",
+				"bug",
+				"review",
+				"userTesting"
+			]
+		},
+		{
+			"login": "dependabot-preview[bot]",
+			"name": "dependabot-preview[bot]",
+			"avatar_url": "https://avatars3.githubusercontent.com/in/2141?v=4",
+			"profile": "https://github.com/apps/dependabot-preview",
+			"contributions": [
+				"maintenance"
+			]
+		},
+		{
+			"login": "depfu[bot]",
+			"name": "depfu[bot]",
+			"avatar_url": "https://avatars3.githubusercontent.com/in/715?v=4",
+			"profile": "https://github.com/apps/depfu",
+			"contributions": [
+				"maintenance"
+			]
+		}
+	],
+	"contributorsPerLine": 7
+}

@@ -101,7 +101,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/skyra-project/decorators/blob/08316d5/src/core-decorators.ts#L18">core-decorators.ts:18</a></li>
+									<li>Defined in <a href="https://github.com/skyra-project/decorators/blob/26457ea/src/core-decorators.ts#L18">src/core-decorators.ts:18</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -109,10 +109,10 @@
 									<p>Decorator function that applies given options to any Klasa piece</p>
 								</div>
 								<pre><code class="language-ts">    ApplyOptions&lt;CommandOptions&gt;({
-        name: <span class="hljs-string">&#x27;test&#x27;</span>,
-        cooldown: <span class="hljs-number">10</span>
+        <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;ping&#x27;</span>,
+        <span class="hljs-attr">cooldown</span>: <span class="hljs-number">10</span>
     })
-    <span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-keyword">class</span> <span class="hljs-keyword">extends</span> Command {}</code></pre>
+    <span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Command</span> </span>{}</code></pre>
 								<dl class="tsd-comment-tags">
 									<dt>since</dt>
 									<dd><p>1.0.0</p>
@@ -139,13 +139,13 @@
 					<a name="createresolver" class="tsd-anchor"></a>
 					<h3>Create<wbr>Resolver</h3>
 					<ul class="tsd-signatures tsd-kind-function">
-						<li class="tsd-signature tsd-kind-icon">Create<wbr>Resolver<span class="tsd-signature-symbol">(</span>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, resolverFn<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">CustomUsageArgument</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ClassDecorator</span></li>
+						<li class="tsd-signature tsd-kind-icon">Create<wbr>Resolver<span class="tsd-signature-symbol">(</span>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, resolverFn<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ArgResolverCustomMethod</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ClassDecorator</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/skyra-project/decorators/blob/08316d5/src/starlight-decorators.ts#L72">starlight-decorators.ts:72</a></li>
+									<li>Defined in <a href="https://github.com/skyra-project/decorators/blob/26457ea/src/starlight-decorators.ts#L72">src/starlight-decorators.ts:72</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -154,7 +154,7 @@
 								</div>
 								<pre><code class="language-ts">    CreateResolver(<span class="hljs-string">&#x27;key&#x27;</span>, <span class="hljs-function">(<span class="hljs-params">arg, _possible, message, [action]</span>) =&gt;</span> {
         <span class="hljs-keyword">if</span> (action === <span class="hljs-string">&#x27;show&#x27;</span> || arg) <span class="hljs-keyword">return</span> arg || <span class="hljs-string">&#x27;&#x27;</span>;
-        <span class="hljs-keyword">throw</span> message.language.get(<span class="hljs-string">&#x27;COMMAND_CONF_NOKEY&#x27;</span>);
+        <span class="hljs-keyword">throw</span> message.language.get(<span class="hljs-string">&#x27;commandConfNoKey&#x27;</span>);
     })</code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -166,7 +166,7 @@
 									</div>
 								</li>
 								<li>
-									<h5>resolverFn: <span class="tsd-signature-type">CustomUsageArgument</span></h5>
+									<h5>resolverFn: <span class="tsd-signature-type">ArgResolverCustomMethod</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>Function describing how to resolve the argument</p>
 									</div>
@@ -180,13 +180,13 @@
 					<a name="createresolvers" class="tsd-anchor"></a>
 					<h3>Create<wbr>Resolvers</h3>
 					<ul class="tsd-signatures tsd-kind-function">
-						<li class="tsd-signature tsd-kind-icon">Create<wbr>Resolvers<span class="tsd-signature-symbol">(</span>resolvers<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">CustomUsageArgument</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ClassDecorator</span></li>
+						<li class="tsd-signature tsd-kind-icon">Create<wbr>Resolvers<span class="tsd-signature-symbol">(</span>resolvers<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">ArgResolverCustomMethod</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ClassDecorator</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/skyra-project/decorators/blob/08316d5/src/starlight-decorators.ts#L48">starlight-decorators.ts:48</a></li>
+									<li>Defined in <a href="https://github.com/skyra-project/decorators/blob/26457ea/src/starlight-decorators.ts#L48">src/starlight-decorators.ts:48</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -198,7 +198,7 @@
             <span class="hljs-string">&#x27;key&#x27;</span>,
             <span class="hljs-function">(<span class="hljs-params">arg, _possible, message, [action]</span>) =&gt;</span> {
                 <span class="hljs-keyword">if</span> (action === <span class="hljs-string">&#x27;show&#x27;</span> || arg) <span class="hljs-keyword">return</span> arg || <span class="hljs-string">&#x27;&#x27;</span>;
-                <span class="hljs-keyword">throw</span> message.language.get(<span class="hljs-string">&#x27;COMMAND_CONF_NOKEY&#x27;</span>);
+                <span class="hljs-keyword">throw</span> message.language.get(<span class="hljs-string">&#x27;commandConfNoKey&#x27;</span>);
             }
         ]
     ])</code></pre>
@@ -217,7 +217,7 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>resolvers: <span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">CustomUsageArgument</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol">[]</span></h5>
+									<h5>resolvers: <span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">ArgResolverCustomMethod</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol">[]</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>Array of custom resolvers to apply to a command</p>
 									</div>
@@ -237,7 +237,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/skyra-project/decorators/blob/08316d5/src/utils.ts#L85">utils.ts:85</a></li>
+									<li>Defined in <a href="https://github.com/skyra-project/decorators/blob/26457ea/src/utils.ts#L85">src/utils.ts:85</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -282,7 +282,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/skyra-project/decorators/blob/08316d5/src/utils.ts#L112">utils.ts:112</a></li>
+									<li>Defined in <a href="https://github.com/skyra-project/decorators/blob/26457ea/src/utils.ts#L112">src/utils.ts:112</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -338,7 +338,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/skyra-project/decorators/blob/08316d5/src/utils.ts#L75">utils.ts:75</a></li>
+									<li>Defined in <a href="https://github.com/skyra-project/decorators/blob/26457ea/src/utils.ts#L75">src/utils.ts:75</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -374,13 +374,13 @@
 					<a name="requiredpermissions" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagConst">Const</span> required<wbr>Permissions</h3>
 					<ul class="tsd-signatures tsd-kind-function">
-						<li class="tsd-signature tsd-kind-icon">required<wbr>Permissions<span class="tsd-signature-symbol">(</span>permissionsResolvable<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">PermissionsResolvable</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">MethodDecorator</span></li>
+						<li class="tsd-signature tsd-kind-icon">required<wbr>Permissions<span class="tsd-signature-symbol">(</span>permissionsResolvable<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">PermissionResolvable</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">MethodDecorator</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/skyra-project/decorators/blob/08316d5/src/core-decorators.ts#L68">core-decorators.ts:68</a></li>
+									<li>Defined in <a href="https://github.com/skyra-project/decorators/blob/26457ea/src/core-decorators.ts#L68">src/core-decorators.ts:68</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -389,21 +389,21 @@
 									Requires a few steps of setup</p>
 								</div>
 								<pre><code class="language-ts">    <span class="hljs-comment">// 1. Module augment Klasa with the following code:</span>
-    <span class="hljs-keyword">declare</span> <span class="hljs-keyword">module</span> &#x27;klasa&#x27; {
+    <span class="hljs-keyword">declare</span> <span class="hljs-built_in">module</span> <span class="hljs-string">&#x27;klasa&#x27;</span> {
         <span class="hljs-keyword">interface</span> Language {
-            PERMISSIONS: PermissionStrings; <span class="hljs-comment">// Import this interface from this lib</span>
+            <span class="hljs-attr">PERMISSIONS</span>: PermissionStrings; <span class="hljs-comment">// Import this interface from this lib</span>
         }
     }
 
     <span class="hljs-comment">// 2. In your language file create a property:</span>
     <span class="hljs-keyword">public</span> PERMISSIONS = {
-        ADMINISTRATOR: <span class="hljs-string">&#x27;Administrator&#x27;</span>,
-        VIEW_AUDIT_LOG: <span class="hljs-string">&#x27;View Audit Log&#x27;</span>,
-        MANAGE_GUILD: <span class="hljs-string">&#x27;Manage Server&#x27;</span>,
-        MANAGE_ROLES: <span class="hljs-string">&#x27;Manage Roles&#x27;</span>,
-        MANAGE_CHANNELS: <span class="hljs-string">&#x27;Manage Channels&#x27;</span>,
-        KICK_MEMBERS: <span class="hljs-string">&#x27;Kick Members&#x27;</span>,
-        BAN_MEMBERS: <span class="hljs-string">&#x27;Ban Members&#x27;</span>,
+        <span class="hljs-attr">ADMINISTRATOR</span>: <span class="hljs-string">&#x27;Administrator&#x27;</span>,
+        <span class="hljs-attr">VIEW_AUDIT_LOG</span>: <span class="hljs-string">&#x27;View Audit Log&#x27;</span>,
+        <span class="hljs-attr">MANAGE_GUILD</span>: <span class="hljs-string">&#x27;Manage Server&#x27;</span>,
+        <span class="hljs-attr">MANAGE_ROLES</span>: <span class="hljs-string">&#x27;Manage Roles&#x27;</span>,
+        <span class="hljs-attr">MANAGE_CHANNELS</span>: <span class="hljs-string">&#x27;Manage Channels&#x27;</span>,
+        <span class="hljs-attr">KICK_MEMBERS</span>: <span class="hljs-string">&#x27;Kick Members&#x27;</span>,
+        <span class="hljs-attr">BAN_MEMBERS</span>: <span class="hljs-string">&#x27;Ban Members&#x27;</span>,
         <span class="hljs-comment">// ..etc</span>
     }</code></pre>
 								<dl class="tsd-comment-tags">
@@ -418,7 +418,7 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>permissionsResolvable: <span class="tsd-signature-type">PermissionsResolvable</span></h5>
+									<h5>permissionsResolvable: <span class="tsd-signature-type">PermissionResolvable</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<div class="lead">
 											<p>Permissions that the method should have</p>
@@ -440,7 +440,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/skyra-project/decorators/blob/08316d5/src/core-decorators.ts#L100">core-decorators.ts:100</a></li>
+									<li>Defined in <a href="https://github.com/skyra-project/decorators/blob/26457ea/src/core-decorators.ts#L104">src/core-decorators.ts:104</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -476,7 +476,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/skyra-project/decorators/blob/08316d5/src/core-decorators.ts#L91">core-decorators.ts:91</a></li>
+									<li>Defined in <a href="https://github.com/skyra-project/decorators/blob/26457ea/src/core-decorators.ts#L95">src/core-decorators.ts:95</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -512,7 +512,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/skyra-project/decorators/blob/08316d5/src/core-decorators.ts#L36">core-decorators.ts:36</a></li>
+									<li>Defined in <a href="https://github.com/skyra-project/decorators/blob/26457ea/src/core-decorators.ts#L36">src/core-decorators.ts:36</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
