@@ -14,11 +14,10 @@ describe('ApplyOptions', () => {
 			}
 		}
 
-		const instance = new TestPiece(new MockCommandStore('name', client), __dirname, [__filename]);
+		const instance = new TestPiece(new MockCommandStore('name', client), [__filename], __dirname);
 
 		expect(instance.name).toBe('test');
-		expect(instance.cooldowns.time).toBe(10);
+		expect(instance.cooldown).toBe(10);
 		expect(instance.guarded).toBe(false);
-		expect(Object.getOwnPropertyDescriptor(instance.constructor.prototype, 'getName')).toBeDefined();
 	});
 });

@@ -8,16 +8,18 @@ class Test {
 	}
 }
 
-test('Test Permissions (Existent)', async () => {
-	const instance = new Test();
-	const message = new Message('Hello World', null, 5);
-	const content = await instance.getContent(message);
-	expect(content).toBe('Hello World');
-});
+describe('requiresPermission Decorator', () => {
+	test('Test Permissions (Existent)', async () => {
+		const instance = new Test();
+		const message = new Message('Hello World', null, 5);
+		const content = await instance.getContent(message);
+		expect(content).toBe('Hello World');
+	});
 
-test('Test Permissions (Non-Existent)', async () => {
-	const instance = new Test();
-	const message = new Message('Hello World', null, 4);
-	const content = await instance.getContent(message);
-	expect(content).toBe(undefined);
+	test('Test Permissions (Non-Existent)', async () => {
+		const instance = new Test();
+		const message = new Message('Hello World', null, 4);
+		const content = await instance.getContent(message);
+		expect(content).toBe(undefined);
+	});
 });

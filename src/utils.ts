@@ -20,7 +20,7 @@ export interface Fallback {
 
 /* eslint-disable @typescript-eslint/naming-convention */
 /**
- * Discord permissions for {@link requiredPermissions}
+ * Discord permissions for [[requiredPermissions]]
  * This is a list of strings of permissions so you can apply your own i18n over each
  */
 export interface PermissionStrings {
@@ -54,7 +54,7 @@ export interface PermissionStrings {
 	MOVE_MEMBERS: string;
 	USE_VAD: string;
 	PRIORITY_SPEAKER: string;
-	[key: string]: string;
+	VIEW_GUILD_INSIGHTS: string;
 }
 /* eslint-enable @typescript-eslint/naming-convention */
 
@@ -80,7 +80,7 @@ export function createMethodDecorator(fn: MethodDecorator): MethodDecorator {
  * Utility to make a class decorator with lighter syntax and inferred types.
  * @since 1.0.0
  * @param fn The class to decorate
- * @see {@link ApplyOptions}
+ * @see [[ApplyOptions]]
  */
 export function createClassDecorator<TFunction extends (...args: any[]) => void>(fn: TFunction): ClassDecorator {
 	return fn;

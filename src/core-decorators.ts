@@ -1,5 +1,5 @@
-import { Permissions, PermissionsResolvable, Piece, PieceOptions, TextChannel } from '@klasa/core';
-import type { Constructor, KlasaClient, KlasaMessage } from 'klasa';
+import { Constructor, PermissionResolvable, Permissions, TextChannel } from 'discord.js';
+import type { KlasaClient, KlasaMessage, Piece, PieceOptions } from 'klasa';
 import { createClassDecorator, createFunctionInhibitor, createProxy, Fallback } from './utils';
 
 /**
@@ -7,7 +7,7 @@ import { createClassDecorator, createFunctionInhibitor, createProxy, Fallback } 
  *
  * ```ts
  *	ApplyOptions<CommandOptions>({
- *		name: 'test',
+ *		name: 'ping',
  *		cooldown: 10
  *	})
  *	export default class extends Command {}
@@ -65,16 +65,20 @@ export function requiresPermission(value: number, fallback: Fallback = (): void 
  * @remark In particular useful for subcommand methods
  * @param permissionsResolvable Permissions that the method should have
  */
-export const requiredPermissions = (permissionsResolvable: PermissionsResolvable): MethodDecorator => {
+export const requiredPermissions = (permissionsResolvable: PermissionResolvable): MethodDecorator => {
 	const resolved = Permissions.resolve(permissionsResolvable);
 	return createFunctionInhibitor(async (message: KlasaMessage) => {
-		const missing = (message.channel as TextChannel).permissionsFor(message.guild!.me ?? (await message.guild!.members.fetch(message.client.user!.id))).missing(resolved) ?? [];
+		const missing =
+			(message.channel as TextChannel)
+				.permissionsFor(message.guild!.me ?? (await message.guild!.members.fetch(message.client.user!.id)))
+				?.missing(resolved) ?? [];
 
 		if (missing.length) {
-			const permissions = message.language.PERMISSIONS;
-			// eslint-disable-next-line @typescript-eslint/no-throw-literal
-			throw message.language.get(
-				'INHIBITOR_MISSING_BOT_PERMS',
+			const language = await message.fetchLanguage();
+			const permissions = language.PERMISSIONS;
+
+			throw language.get(
+				'inhibitorMissingBotPerms',
 				missing.map((permission) => permissions[permission])
 			);
 		}

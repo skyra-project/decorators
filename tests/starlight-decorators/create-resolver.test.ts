@@ -1,34 +1,25 @@
-import { Cache } from '@klasa/cache';
 import { client, MockCommandStore } from '@mocks/MockInstances';
 import { ApplyOptions } from '@src/core-decorators';
 import { CreateResolver } from '@src/starlight-decorators';
-import { Command, CommandOptions, CustomUsageArgument } from 'klasa';
+import { Command, CommandOptions } from 'klasa';
 
 describe('CreateResolver Decorator', () => {
 	const mockCommandStore = new MockCommandStore('name', client);
-	const receivedResolvers = new Cache<string, CustomUsageArgument>([
-		[
-			'key',
-			(arg, _possible, message, [action]) => {
-				if (action === 'show' || arg) return arg || '';
-				throw message.language.get('COMMAND_CONF_NOKEY');
-			}
-		]
-	]);
 
 	test('Applies Resolver to a command', () => {
-		@CreateResolver('key', (arg, _possible, message, [action]) => {
+		@CreateResolver('key', async (arg, _possible, message, [action]) => {
 			if (action === 'show' || arg) return arg || '';
-			throw message.language.get('COMMAND_CONF_NOKEY');
+			throw await message.fetchLocale('commandConfNoKey');
 		})
 		class TestCommand extends Command {}
 
-		const instance = new TestCommand(mockCommandStore, __dirname, [__filename]);
+		const instance = new TestCommand(mockCommandStore, [__filename], __dirname);
+		const customResolvers = [...Object.entries(instance.usage.customResolvers)];
 
-		expect(instance.usage.customResolvers.firstValue).toEqual(expect.any(Function));
-		expect(instance.usage.customResolvers.firstKey).toEqual(receivedResolvers.firstKey);
+		expect(customResolvers[0][0]).toEqual('key');
+		expect(customResolvers[0][1]).toEqual(expect.any(Function));
 
-		expect(instance.usage.customResolvers.size).toEqual(1);
+		expect(customResolvers.length).toEqual(1);
 	});
 
 	test('Is compatible with @ApplyOptions', () => {
@@ -36,18 +27,21 @@ describe('CreateResolver Decorator', () => {
 			name: 'test',
 			cooldown: 10
 		})
-		@CreateResolver('key', (arg, _possible, message, [action]) => {
+		@CreateResolver('key', async (arg, _possible, message, [action]) => {
 			if (action === 'show' || arg) return arg || '';
-			throw message.language.get('COMMAND_CONF_NOKEY');
+			throw await message.fetchLocale('commandConfNoKey');
 		})
 		class TestCommand extends Command {}
 
-		const instance = new TestCommand(mockCommandStore, __dirname, [__filename]);
+		const instance = new TestCommand(mockCommandStore, [__filename], __dirname);
+		const customResolvers = [...Object.entries(instance.usage.customResolvers)];
 
 		expect(instance.name).toEqual('test');
-		expect(instance.usage.customResolvers.firstValue).toEqual(expect.any(Function));
-		expect(instance.usage.customResolvers.firstKey).toEqual(receivedResolvers.firstKey);
+		expect(instance.cooldown).toEqual(10);
 
-		expect(instance.usage.customResolvers.size).toEqual(1);
+		expect(customResolvers[0][0]).toEqual('key');
+		expect(customResolvers[0][1]).toEqual(expect.any(Function));
+
+		expect(customResolvers.length).toEqual(1);
 	});
 });

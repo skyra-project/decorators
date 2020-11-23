@@ -22,8 +22,8 @@
  * SOFTWARE.
  */
 
-import type { Constructor } from '@klasa/core';
-import type { Command, CustomUsageArgument } from 'klasa';
+import type { Constructor } from 'discord.js';
+import type { ArgResolverCustomMethod, Command } from 'klasa';
 import { createClassDecorator, createProxy } from './utils';
 
 /**
@@ -35,7 +35,7 @@ import { createClassDecorator, createProxy } from './utils';
  *			'key',
  *			(arg, _possible, message, [action]) => {
  *				if (action === 'show' || arg) return arg || '';
- *				throw message.language.get('COMMAND_CONF_NOKEY');
+ *				throw message.language.get('commandConfNoKey');
  *			}
  *		]
  *	])
@@ -45,7 +45,7 @@ import { createClassDecorator, createProxy } from './utils';
  * @license MIT
  * @param resolvers Array of custom resolvers to apply to a command
  */
-export function CreateResolvers(resolvers: [string, CustomUsageArgument][]): ClassDecorator {
+export function CreateResolvers(resolvers: [string, ArgResolverCustomMethod][]): ClassDecorator {
 	return createClassDecorator((target: Constructor<Command>) =>
 		createProxy(target, {
 			construct: (ctor, [store, directory, files, options]): Command => {
@@ -63,14 +63,12 @@ export function CreateResolvers(resolvers: [string, CustomUsageArgument][]): Cla
  * ```ts
  *	CreateResolver('key', (arg, _possible, message, [action]) => {
  *		if (action === 'show' || arg) return arg || '';
- *		throw message.language.get('COMMAND_CONF_NOKEY');
+ *		throw message.language.get('commandConfNoKey');
  *	})
  * ```
  * @param name Name of the custom argument resolver
  * @param resolverFn Function describing how to resolve the argument
  */
-export function CreateResolver(name: string, resolverFn: CustomUsageArgument): ClassDecorator {
+export function CreateResolver(name: string, resolverFn: ArgResolverCustomMethod): ClassDecorator {
 	return CreateResolvers([[name, resolverFn]]);
 }
-
-// TODO: Add SetRoute decorator when KDH has been updated to support @klasa/core and klasa >= 0.6.0
