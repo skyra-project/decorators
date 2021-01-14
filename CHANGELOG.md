@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [4.0.0](https://github.com/skyra-project/decorators/compare/v3.0.0...v4.0.0) (2021-01-14)
+
+### ⚠ BREAKING CHANGES
+
+-   This completely removes support for the old Klasa based Languages and lots of Klasa
+    related stuff. Do not use this if you're not a Skyra developer. Migrate to Sapphire Framework
+    instead and use @sapphire/decorators.
+
+### Bug Fixes
+
+-   migrate to i18next ([5024bbe](https://github.com/skyra-project/decorators/commit/5024bbe856f2c37a944c2783fdefb14eb31e508d))
+
 ## [3.0.0](https://github.com/skyra-project/decorators/compare/v2.3.0...v3.0.0) (2020-11-23)
 
 ### ⚠ BREAKING CHANGES
