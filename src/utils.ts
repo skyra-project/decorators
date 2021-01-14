@@ -18,46 +18,6 @@ export interface Fallback {
 	(...args: any[]): unknown;
 }
 
-/* eslint-disable @typescript-eslint/naming-convention */
-/**
- * Discord permissions for [[requiredPermissions]]
- * This is a list of strings of permissions so you can apply your own i18n over each
- */
-export interface PermissionStrings {
-	ADMINISTRATOR: string;
-	VIEW_AUDIT_LOG: string;
-	MANAGE_GUILD: string;
-	MANAGE_ROLES: string;
-	MANAGE_CHANNELS: string;
-	KICK_MEMBERS: string;
-	BAN_MEMBERS: string;
-	CREATE_INSTANT_INVITE: string;
-	CHANGE_NICKNAME: string;
-	MANAGE_NICKNAMES: string;
-	MANAGE_EMOJIS: string;
-	MANAGE_WEBHOOKS: string;
-	VIEW_CHANNEL: string;
-	SEND_MESSAGES: string;
-	SEND_TTS_MESSAGES: string;
-	MANAGE_MESSAGES: string;
-	EMBED_LINKS: string;
-	ATTACH_FILES: string;
-	READ_MESSAGE_HISTORY: string;
-	MENTION_EVERYONE: string;
-	USE_EXTERNAL_EMOJIS: string;
-	ADD_REACTIONS: string;
-	CONNECT: string;
-	SPEAK: string;
-	STREAM: string;
-	MUTE_MEMBERS: string;
-	DEAFEN_MEMBERS: string;
-	MOVE_MEMBERS: string;
-	USE_VAD: string;
-	PRIORITY_SPEAKER: string;
-	VIEW_GUILD_INSIGHTS: string;
-}
-/* eslint-enable @typescript-eslint/naming-convention */
-
 /**
  * Utility to make a method decorator with lighter syntax and inferred types.
  *

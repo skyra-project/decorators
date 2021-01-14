@@ -1,8 +1,14 @@
-import type { PermissionStrings } from './utils';
+import 'discord.js';
+import type { TFunction } from 'i18next';
 
-declare module 'klasa' {
-	interface Language {
-		// eslint-disable-next-line @typescript-eslint/naming-convention
-		PERMISSIONS: PermissionStrings;
+declare interface TextBasedExtensions {
+	fetchT(): Promise<TFunction>;
+}
+
+declare module 'discord.js' {
+	interface Message extends TextBasedExtensions {}
+
+	interface Constructor<C> {
+		new (...args: any[]): C;
 	}
 }

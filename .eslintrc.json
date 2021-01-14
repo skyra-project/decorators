@@ -1,41 +1,7 @@
 {
 	"extends": "@sapphire",
 	"rules": {
-		"@typescript-eslint/naming-convention": [
-			"error",
-			{
-				"selector": "default",
-				"format": ["camelCase"],
-				"leadingUnderscore": "forbid",
-				"trailingUnderscore": "forbid",
-				"filter": {
-					"regex": "^(?:VariableDeclarator|AssignmentExpression)$",
-					"match": false
-				}
-			},
-			{
-				"selector": "parameter",
-				"format": ["camelCase"],
-				"leadingUnderscore": "allow"
-			},
-			{
-				"selector": "property",
-				"modifiers": ["readonly"],
-				"prefix": ["k"],
-				"format": ["PascalCase"]
-			},
-			{
-				"selector": "enumMember",
-				"format": ["PascalCase"]
-			},
-			{
-				"selector": "typeLike",
-				"format": ["PascalCase"]
-			},
-			{
-				"selector": "function",
-				"format": ["PascalCase", "camelCase"]
-			}
-		]
+		"@typescript-eslint/naming-convention": "off",
+		"@typescript-eslint/no-throw-literal": "off"
 	}
 }

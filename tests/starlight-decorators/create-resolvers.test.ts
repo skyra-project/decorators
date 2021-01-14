@@ -12,7 +12,8 @@ describe('CreateResolvers Decorator', () => {
 				'key',
 				async (arg, _possible, message, [action]) => {
 					if (action === 'show' || arg) return arg || '';
-					throw await message.fetchLocale('commandConfNoKey');
+					const t = await message.fetchT();
+					throw t('commands/admin:confNoKey');
 				}
 			],
 			[
@@ -20,7 +21,8 @@ describe('CreateResolvers Decorator', () => {
 				async (arg, possible, message, [action]) => {
 					if (!['set', 'remove'].includes(action as string)) return null;
 					if (arg) return message.client.arguments.get('...string')!.run(arg, possible, message);
-					throw await message.fetchLocale('commandConfNoValue');
+					const t = await message.fetchT();
+					throw t('commands/admin:confNoValue');
 				}
 			]
 		])
@@ -48,7 +50,8 @@ describe('CreateResolvers Decorator', () => {
 				'key',
 				async (arg, _possible, message, [action]) => {
 					if (action === 'show' || arg) return arg || '';
-					throw await message.fetchLocale('commandConfNoKey');
+					const t = await message.fetchT();
+					throw t('commands/admin:confNoKey');
 				}
 			]
 		])

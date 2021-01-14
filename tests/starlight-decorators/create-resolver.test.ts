@@ -9,7 +9,8 @@ describe('CreateResolver Decorator', () => {
 	test('Applies Resolver to a command', () => {
 		@CreateResolver('key', async (arg, _possible, message, [action]) => {
 			if (action === 'show' || arg) return arg || '';
-			throw await message.fetchLocale('commandConfNoKey');
+			const t = await message.fetchT();
+			throw t('commands/admin:confNoKey');
 		})
 		class TestCommand extends Command {}
 
@@ -29,7 +30,8 @@ describe('CreateResolver Decorator', () => {
 		})
 		@CreateResolver('key', async (arg, _possible, message, [action]) => {
 			if (action === 'show' || arg) return arg || '';
-			throw await message.fetchLocale('commandConfNoKey');
+			const t = await message.fetchT();
+			throw t('commands/admin:confNoKey');
 		})
 		class TestCommand extends Command {}
 
