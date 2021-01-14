@@ -3,10 +3,11 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Skyra Decorators</title>
-	<meta name="description" content="Documentation for Skyra Decorators">
+	<title>@skyra/decorators</title>
+	<meta name="description" content="Documentation for @skyra/decorators">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="assets/css/main.css">
+	<script async src="assets/js/search.js" id="search-script"></script>
 </head>
 <body>
 <header>
@@ -22,7 +23,7 @@
 						<li class="state loading">Preparing search index...</li>
 						<li class="state failure">The search index is not available</li>
 					</ul>
-					<a href="index.html" class="title">Skyra Decorators</a>
+					<a href="index.html" class="title">@skyra/decorators</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -47,12 +48,7 @@
 	</div>
 	<div class="tsd-page-title">
 		<div class="container">
-			<ul class="tsd-breadcrumb">
-				<li>
-					<a href="globals.html">Globals</a>
-				</li>
-			</ul>
-			<h1>Skyra Decorators</h1>
+			<h1>Project @skyra/decorators</h1>
 		</div>
 	</div>
 </header>
@@ -68,22 +64,21 @@
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-interface"><a href="interfaces/fallback.html" class="tsd-kind-icon">Fallback</a></li>
 								<li class="tsd-kind-interface"><a href="interfaces/inhibitor.html" class="tsd-kind-icon">Inhibitor</a></li>
-								<li class="tsd-kind-interface"><a href="interfaces/permissionstrings.html" class="tsd-kind-icon">Permission<wbr>Strings</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-function tsd-has-type-parameter"><a href="globals.html#applyoptions" class="tsd-kind-icon">Apply<wbr>Options</a></li>
-								<li class="tsd-kind-function"><a href="globals.html#createresolver" class="tsd-kind-icon">Create<wbr>Resolver</a></li>
-								<li class="tsd-kind-function"><a href="globals.html#createresolvers" class="tsd-kind-icon">Create<wbr>Resolvers</a></li>
-								<li class="tsd-kind-function tsd-has-type-parameter"><a href="globals.html#createclassdecorator" class="tsd-kind-icon">create<wbr>Class<wbr>Decorator</a></li>
-								<li class="tsd-kind-function"><a href="globals.html#createfunctioninhibitor" class="tsd-kind-icon">create<wbr>Function<wbr>Inhibitor</a></li>
-								<li class="tsd-kind-function"><a href="globals.html#createmethoddecorator" class="tsd-kind-icon">create<wbr>Method<wbr>Decorator</a></li>
-								<li class="tsd-kind-function"><a href="globals.html#requiredpermissions" class="tsd-kind-icon">required<wbr>Permissions</a></li>
-								<li class="tsd-kind-function"><a href="globals.html#requiresdmcontext" class="tsd-kind-icon">requiresDMContext</a></li>
-								<li class="tsd-kind-function"><a href="globals.html#requiresguildcontext" class="tsd-kind-icon">requires<wbr>Guild<wbr>Context</a></li>
-								<li class="tsd-kind-function"><a href="globals.html#requirespermission" class="tsd-kind-icon">requires<wbr>Permission</a></li>
+								<li class="tsd-kind-function tsd-has-type-parameter"><a href="modules.html#applyoptions" class="tsd-kind-icon">Apply<wbr>Options</a></li>
+								<li class="tsd-kind-function"><a href="modules.html#createresolver" class="tsd-kind-icon">Create<wbr>Resolver</a></li>
+								<li class="tsd-kind-function"><a href="modules.html#createresolvers" class="tsd-kind-icon">Create<wbr>Resolvers</a></li>
+								<li class="tsd-kind-function tsd-has-type-parameter"><a href="modules.html#createclassdecorator" class="tsd-kind-icon">create<wbr>Class<wbr>Decorator</a></li>
+								<li class="tsd-kind-function"><a href="modules.html#createfunctioninhibitor" class="tsd-kind-icon">create<wbr>Function<wbr>Inhibitor</a></li>
+								<li class="tsd-kind-function"><a href="modules.html#createmethoddecorator" class="tsd-kind-icon">create<wbr>Method<wbr>Decorator</a></li>
+								<li class="tsd-kind-function"><a href="modules.html#requiredpermissions" class="tsd-kind-icon">required<wbr>Permissions</a></li>
+								<li class="tsd-kind-function"><a href="modules.html#requiresdmcontext" class="tsd-kind-icon">requiresDMContext</a></li>
+								<li class="tsd-kind-function"><a href="modules.html#requiresguildcontext" class="tsd-kind-icon">requires<wbr>Guild<wbr>Context</a></li>
+								<li class="tsd-kind-function"><a href="modules.html#requirespermission" class="tsd-kind-icon">requires<wbr>Permission</a></li>
 							</ul>
 						</section>
 					</div>
@@ -101,18 +96,19 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/skyra-project/decorators/blob/d1164db/src/core-decorators.ts#L18">src/core-decorators.ts:18</a></li>
+									<li>Defined in <a href="https://github.com/skyra-project/decorators/blob/ba298d5/src/core-decorators.ts#L18">core-decorators.ts:18</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>Decorator function that applies given options to any Klasa piece</p>
 								</div>
-								<pre><code class="language-ts">    ApplyOptions&lt;CommandOptions&gt;({
-        <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;ping&#x27;</span>,
-        <span class="hljs-attr">cooldown</span>: <span class="hljs-number">10</span>
-    })
-    <span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Command</span> </span>{}</code></pre>
+								<pre><code class="language-ts"><span style="color: #000000">    </span><span style="color: #795E26">ApplyOptions</span><span style="color: #000000">&lt;</span><span style="color: #267F99">CommandOptions</span><span style="color: #000000">&gt;({</span>
+<span style="color: #000000">        </span><span style="color: #001080">name:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;ping&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">        </span><span style="color: #001080">cooldown:</span><span style="color: #000000"> </span><span style="color: #098658">10</span>
+<span style="color: #000000">    })</span>
+<span style="color: #000000">    </span><span style="color: #AF00DB">export</span><span style="color: #000000"> </span><span style="color: #AF00DB">default</span><span style="color: #000000"> </span><span style="color: #0000FF">class</span><span style="color: #000000"> </span><span style="color: #0000FF">extends</span><span style="color: #000000"> </span><span style="color: #267F99">Command</span><span style="color: #000000"> {}</span>
+</code></pre>
 								<dl class="tsd-comment-tags">
 									<dt>since</dt>
 									<dd><p>1.0.0</p>
@@ -145,17 +141,18 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/skyra-project/decorators/blob/d1164db/src/starlight-decorators.ts#L72">src/starlight-decorators.ts:72</a></li>
+									<li>Defined in <a href="https://github.com/skyra-project/decorators/blob/ba298d5/src/starlight-decorators.ts#L72">starlight-decorators.ts:72</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>Applies a single custom resolver to a command through a decorator</p>
 								</div>
-								<pre><code class="language-ts">    CreateResolver(<span class="hljs-string">&#x27;key&#x27;</span>, <span class="hljs-function">(<span class="hljs-params">arg, _possible, message, [action]</span>) =&gt;</span> {
-        <span class="hljs-keyword">if</span> (action === <span class="hljs-string">&#x27;show&#x27;</span> || arg) <span class="hljs-keyword">return</span> arg || <span class="hljs-string">&#x27;&#x27;</span>;
-        <span class="hljs-keyword">throw</span> message.language.get(<span class="hljs-string">&#x27;commandConfNoKey&#x27;</span>);
-    })</code></pre>
+								<pre><code class="language-ts"><span style="color: #000000">    </span><span style="color: #795E26">CreateResolver</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;key&#039;</span><span style="color: #000000">, (</span><span style="color: #001080">arg</span><span style="color: #000000">, </span><span style="color: #001080">_possible</span><span style="color: #000000">, </span><span style="color: #001080">message</span><span style="color: #000000">, [</span><span style="color: #001080">action</span><span style="color: #000000">]) </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
+<span style="color: #000000">        </span><span style="color: #AF00DB">if</span><span style="color: #000000"> (</span><span style="color: #001080">action</span><span style="color: #000000"> === </span><span style="color: #A31515">&#039;show&#039;</span><span style="color: #000000"> || </span><span style="color: #001080">arg</span><span style="color: #000000">) </span><span style="color: #AF00DB">return</span><span style="color: #000000"> </span><span style="color: #001080">arg</span><span style="color: #000000"> || </span><span style="color: #A31515">&#039;&#039;</span><span style="color: #000000">;</span>
+<span style="color: #000000">        </span><span style="color: #AF00DB">throw</span><span style="color: #000000"> </span><span style="color: #001080">message</span><span style="color: #000000">.</span><span style="color: #001080">language</span><span style="color: #000000">.</span><span style="color: #795E26">get</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;commandConfNoKey&#039;</span><span style="color: #000000">);</span>
+<span style="color: #000000">    })</span>
+</code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -186,22 +183,23 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/skyra-project/decorators/blob/d1164db/src/starlight-decorators.ts#L48">src/starlight-decorators.ts:48</a></li>
+									<li>Defined in <a href="https://github.com/skyra-project/decorators/blob/ba298d5/src/starlight-decorators.ts#L48">starlight-decorators.ts:48</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>Applies a set of custom resolvers to a command through a decorator</p>
 								</div>
-								<pre><code class="language-ts">    CreateResolvers([
-        [
-            <span class="hljs-string">&#x27;key&#x27;</span>,
-            <span class="hljs-function">(<span class="hljs-params">arg, _possible, message, [action]</span>) =&gt;</span> {
-                <span class="hljs-keyword">if</span> (action === <span class="hljs-string">&#x27;show&#x27;</span> || arg) <span class="hljs-keyword">return</span> arg || <span class="hljs-string">&#x27;&#x27;</span>;
-                <span class="hljs-keyword">throw</span> message.language.get(<span class="hljs-string">&#x27;commandConfNoKey&#x27;</span>);
-            }
-        ]
-    ])</code></pre>
+								<pre><code class="language-ts"><span style="color: #000000">    </span><span style="color: #795E26">CreateResolvers</span><span style="color: #000000">([</span>
+<span style="color: #000000">        [</span>
+<span style="color: #000000">            </span><span style="color: #A31515">&#039;key&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">            (</span><span style="color: #001080">arg</span><span style="color: #000000">, </span><span style="color: #001080">_possible</span><span style="color: #000000">, </span><span style="color: #001080">message</span><span style="color: #000000">, [</span><span style="color: #001080">action</span><span style="color: #000000">]) </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
+<span style="color: #000000">                </span><span style="color: #AF00DB">if</span><span style="color: #000000"> (</span><span style="color: #001080">action</span><span style="color: #000000"> === </span><span style="color: #A31515">&#039;show&#039;</span><span style="color: #000000"> || </span><span style="color: #001080">arg</span><span style="color: #000000">) </span><span style="color: #AF00DB">return</span><span style="color: #000000"> </span><span style="color: #001080">arg</span><span style="color: #000000"> || </span><span style="color: #A31515">&#039;&#039;</span><span style="color: #000000">;</span>
+<span style="color: #000000">                </span><span style="color: #AF00DB">throw</span><span style="color: #000000"> </span><span style="color: #001080">message</span><span style="color: #000000">.</span><span style="color: #001080">language</span><span style="color: #000000">.</span><span style="color: #795E26">get</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;commandConfNoKey&#039;</span><span style="color: #000000">);</span>
+<span style="color: #000000">            }</span>
+<span style="color: #000000">        ]</span>
+<span style="color: #000000">    ])</span>
+</code></pre>
 								<dl class="tsd-comment-tags">
 									<dt>since</dt>
 									<dd><p>2.1.0</p>
@@ -237,7 +235,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/skyra-project/decorators/blob/d1164db/src/utils.ts#L85">src/utils.ts:85</a></li>
+									<li>Defined in <a href="https://github.com/skyra-project/decorators/blob/ba298d5/src/utils.ts#L45">utils.ts:45</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -249,7 +247,7 @@
 									<dd><p>1.0.0</p>
 									</dd>
 									<dt>see</dt>
-									<dd><p><a href="globals.html#applyoptions">ApplyOptions</a></p>
+									<dd><p><a href="modules.html#applyoptions">ApplyOptions</a></p>
 									</dd>
 								</dl>
 							</div>
@@ -276,33 +274,34 @@
 					<a name="createfunctioninhibitor" class="tsd-anchor"></a>
 					<h3>create<wbr>Function<wbr>Inhibitor</h3>
 					<ul class="tsd-signatures tsd-kind-function">
-						<li class="tsd-signature tsd-kind-icon">create<wbr>Function<wbr>Inhibitor<span class="tsd-signature-symbol">(</span>inhibitor<span class="tsd-signature-symbol">: </span><a href="interfaces/inhibitor.html" class="tsd-signature-type">Inhibitor</a>, fallback<span class="tsd-signature-symbol">?: </span><a href="interfaces/fallback.html" class="tsd-signature-type">Fallback</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">MethodDecorator</span></li>
+						<li class="tsd-signature tsd-kind-icon">create<wbr>Function<wbr>Inhibitor<span class="tsd-signature-symbol">(</span>inhibitor<span class="tsd-signature-symbol">: </span><a href="interfaces/inhibitor.html" class="tsd-signature-type" data-tsd-kind="Interface">Inhibitor</a>, fallback<span class="tsd-signature-symbol">?: </span><a href="interfaces/fallback.html" class="tsd-signature-type" data-tsd-kind="Interface">Fallback</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">MethodDecorator</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/skyra-project/decorators/blob/d1164db/src/utils.ts#L112">src/utils.ts:112</a></li>
+									<li>Defined in <a href="https://github.com/skyra-project/decorators/blob/ba298d5/src/utils.ts#L72">utils.ts:72</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>Utility to make function inhibitors.</p>
 								</div>
-								<pre><code class="language-ts">    <span class="hljs-comment">// No fallback (returns undefined)</span>
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">requiresPermission</span>(<span class="hljs-params">value: <span class="hljs-built_in">number</span></span>) </span>{
-        <span class="hljs-keyword">return</span> createFunctionInhibitor(<span class="hljs-function">(<span class="hljs-params">message: KlasaMessage</span>) =&gt;</span>
-            message.hasAtLeastPermissionLevel(value));
-    }
+								<pre><code class="language-ts"><span style="color: #000000">    </span><span style="color: #008000">// No fallback (returns undefined)</span>
+<span style="color: #000000">    </span><span style="color: #0000FF">function</span><span style="color: #000000"> </span><span style="color: #795E26">requiresPermission</span><span style="color: #000000">(</span><span style="color: #001080">value</span><span style="color: #000000">: </span><span style="color: #267F99">number</span><span style="color: #000000">) {</span>
+<span style="color: #000000">        </span><span style="color: #AF00DB">return</span><span style="color: #000000"> </span><span style="color: #795E26">createFunctionInhibitor</span><span style="color: #000000">((</span><span style="color: #001080">message</span><span style="color: #000000">: </span><span style="color: #267F99">KlasaMessage</span><span style="color: #000000">) </span><span style="color: #0000FF">=&gt;</span>
+<span style="color: #000000">            </span><span style="color: #001080">message</span><span style="color: #000000">.</span><span style="color: #795E26">hasAtLeastPermissionLevel</span><span style="color: #000000">(</span><span style="color: #001080">value</span><span style="color: #000000">));</span>
+<span style="color: #000000">    }</span>
 
-    <span class="hljs-comment">// With fallback</span>
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">requiresPermission</span>(<span class="hljs-params">
-        value: <span class="hljs-built_in">number</span>,
-        fallback: () =&gt; unknown = () =&gt; <span class="hljs-literal">undefined</span>
-    </span>) </span>{
-        <span class="hljs-keyword">return</span> createFunctionInhibitor(<span class="hljs-function">(<span class="hljs-params">message: KlasaMessage</span>) =&gt;</span>
-            message.hasAtLeastPermissionLevel(value), fallback);
-    }</code></pre>
+<span style="color: #000000">    </span><span style="color: #008000">// With fallback</span>
+<span style="color: #000000">    </span><span style="color: #0000FF">function</span><span style="color: #000000"> </span><span style="color: #795E26">requiresPermission</span><span style="color: #000000">(</span>
+<span style="color: #000000">        </span><span style="color: #001080">value</span><span style="color: #000000">: </span><span style="color: #267F99">number</span><span style="color: #000000">,</span>
+<span style="color: #000000">        </span><span style="color: #795E26">fallback</span><span style="color: #000000">: () </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> </span><span style="color: #267F99">unknown</span><span style="color: #000000"> = () </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> </span><span style="color: #0000FF">undefined</span>
+<span style="color: #000000">    ) {</span>
+<span style="color: #000000">        </span><span style="color: #AF00DB">return</span><span style="color: #000000"> </span><span style="color: #795E26">createFunctionInhibitor</span><span style="color: #000000">((</span><span style="color: #001080">message</span><span style="color: #000000">: </span><span style="color: #267F99">KlasaMessage</span><span style="color: #000000">) </span><span style="color: #0000FF">=&gt;</span>
+<span style="color: #000000">            </span><span style="color: #001080">message</span><span style="color: #000000">.</span><span style="color: #795E26">hasAtLeastPermissionLevel</span><span style="color: #000000">(</span><span style="color: #001080">value</span><span style="color: #000000">), </span><span style="color: #001080">fallback</span><span style="color: #000000">);</span>
+<span style="color: #000000">    }</span>
+</code></pre>
 								<dl class="tsd-comment-tags">
 									<dt>since</dt>
 									<dd><p>1.0.0</p>
@@ -312,13 +311,13 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>inhibitor: <a href="interfaces/inhibitor.html" class="tsd-signature-type">Inhibitor</a></h5>
+									<h5>inhibitor: <a href="interfaces/inhibitor.html" class="tsd-signature-type" data-tsd-kind="Interface">Inhibitor</a></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>The function that defines whether or not the function should be run, returning the returned value from fallback</p>
 									</div>
 								</li>
 								<li>
-									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> fallback: <a href="interfaces/fallback.html" class="tsd-signature-type">Fallback</a><span class="tsd-signature-symbol"> = (): void &#x3D;&gt; undefined</span></h5>
+									<h5>fallback: <a href="interfaces/fallback.html" class="tsd-signature-type" data-tsd-kind="Interface">Fallback</a><span class="tsd-signature-symbol"> = ...</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>The fallback value that defines what the method should return in case the inhibitor fails</p>
 									</div>
@@ -338,19 +337,20 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/skyra-project/decorators/blob/d1164db/src/utils.ts#L75">src/utils.ts:75</a></li>
+									<li>Defined in <a href="https://github.com/skyra-project/decorators/blob/ba298d5/src/utils.ts#L35">utils.ts:35</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>Utility to make a method decorator with lighter syntax and inferred types.</p>
 								</div>
-								<pre><code class="language-ts"><span class="hljs-comment">// Enumerable function</span>
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">enumerable</span>(<span class="hljs-params">value: <span class="hljs-built_in">boolean</span></span>) </span>{
-        <span class="hljs-keyword">return</span> createMethodDecorator(<span class="hljs-function">(<span class="hljs-params">_target, _propertyKey, descriptor</span>) =&gt;</span> {
-            descriptor.enumerable = value;
-        });
-    }</code></pre>
+								<pre><code class="language-ts"><span style="color: #008000">// Enumerable function</span>
+<span style="color: #000000">    </span><span style="color: #0000FF">function</span><span style="color: #000000"> </span><span style="color: #795E26">enumerable</span><span style="color: #000000">(</span><span style="color: #001080">value</span><span style="color: #000000">: </span><span style="color: #267F99">boolean</span><span style="color: #000000">) {</span>
+<span style="color: #000000">        </span><span style="color: #AF00DB">return</span><span style="color: #000000"> </span><span style="color: #795E26">createMethodDecorator</span><span style="color: #000000">((</span><span style="color: #001080">_target</span><span style="color: #000000">, </span><span style="color: #001080">_propertyKey</span><span style="color: #000000">, </span><span style="color: #001080">descriptor</span><span style="color: #000000">) </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
+<span style="color: #000000">            </span><span style="color: #001080">descriptor</span><span style="color: #000000">.</span><span style="color: #001080">enumerable</span><span style="color: #000000"> = </span><span style="color: #001080">value</span><span style="color: #000000">;</span>
+<span style="color: #000000">        });</span>
+<span style="color: #000000">    }</span>
+</code></pre>
 								<dl class="tsd-comment-tags">
 									<dt>since</dt>
 									<dd><p>1.0.0</p>
@@ -374,38 +374,19 @@
 					<a name="requiredpermissions" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagConst">Const</span> required<wbr>Permissions</h3>
 					<ul class="tsd-signatures tsd-kind-function">
-						<li class="tsd-signature tsd-kind-icon">required<wbr>Permissions<span class="tsd-signature-symbol">(</span>permissionsResolvable<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">PermissionResolvable</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">MethodDecorator</span></li>
+						<li class="tsd-signature tsd-kind-icon">required<wbr>Permissions<span class="tsd-signature-symbol">(</span>permissionsResolvable<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">BitFieldResolvable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">PermissionString</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">MethodDecorator</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/skyra-project/decorators/blob/d1164db/src/core-decorators.ts#L68">src/core-decorators.ts:68</a></li>
+									<li>Defined in <a href="https://github.com/skyra-project/decorators/blob/ba298d5/src/core-decorators.ts#L46">core-decorators.ts:46</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Allows you to set permissions required for individual methods
-									Requires a few steps of setup</p>
+									<p>Allows you to set permissions required for individual methods</p>
 								</div>
-								<pre><code class="language-ts">    <span class="hljs-comment">// 1. Module augment Klasa with the following code:</span>
-    <span class="hljs-keyword">declare</span> <span class="hljs-built_in">module</span> <span class="hljs-string">&#x27;klasa&#x27;</span> {
-        <span class="hljs-keyword">interface</span> Language {
-            <span class="hljs-attr">PERMISSIONS</span>: PermissionStrings; <span class="hljs-comment">// Import this interface from this lib</span>
-        }
-    }
-
-    <span class="hljs-comment">// 2. In your language file create a property:</span>
-    <span class="hljs-keyword">public</span> PERMISSIONS = {
-        <span class="hljs-attr">ADMINISTRATOR</span>: <span class="hljs-string">&#x27;Administrator&#x27;</span>,
-        <span class="hljs-attr">VIEW_AUDIT_LOG</span>: <span class="hljs-string">&#x27;View Audit Log&#x27;</span>,
-        <span class="hljs-attr">MANAGE_GUILD</span>: <span class="hljs-string">&#x27;Manage Server&#x27;</span>,
-        <span class="hljs-attr">MANAGE_ROLES</span>: <span class="hljs-string">&#x27;Manage Roles&#x27;</span>,
-        <span class="hljs-attr">MANAGE_CHANNELS</span>: <span class="hljs-string">&#x27;Manage Channels&#x27;</span>,
-        <span class="hljs-attr">KICK_MEMBERS</span>: <span class="hljs-string">&#x27;Kick Members&#x27;</span>,
-        <span class="hljs-attr">BAN_MEMBERS</span>: <span class="hljs-string">&#x27;Ban Members&#x27;</span>,
-        <span class="hljs-comment">// ..etc</span>
-    }</code></pre>
 								<dl class="tsd-comment-tags">
 									<dt>since</dt>
 									<dd><p>2.1.0</p>
@@ -418,11 +399,9 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>permissionsResolvable: <span class="tsd-signature-type">PermissionResolvable</span></h5>
+									<h5>permissionsResolvable: <span class="tsd-signature-type">BitFieldResolvable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">PermissionString</span><span class="tsd-signature-symbol">&gt;</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<div class="lead">
-											<p>Permissions that the method should have</p>
-										</div>
+										<p>Permissions that the method should have</p>
 									</div>
 								</li>
 							</ul>
@@ -434,13 +413,13 @@
 					<a name="requiresdmcontext" class="tsd-anchor"></a>
 					<h3>requiresDMContext</h3>
 					<ul class="tsd-signatures tsd-kind-function">
-						<li class="tsd-signature tsd-kind-icon">requiresDMContext<span class="tsd-signature-symbol">(</span>fallback<span class="tsd-signature-symbol">?: </span><a href="interfaces/fallback.html" class="tsd-signature-type">Fallback</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">MethodDecorator</span></li>
+						<li class="tsd-signature tsd-kind-icon">requiresDMContext<span class="tsd-signature-symbol">(</span>fallback<span class="tsd-signature-symbol">?: </span><a href="interfaces/fallback.html" class="tsd-signature-type" data-tsd-kind="Interface">Fallback</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">MethodDecorator</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/skyra-project/decorators/blob/d1164db/src/core-decorators.ts#L104">src/core-decorators.ts:104</a></li>
+									<li>Defined in <a href="https://github.com/skyra-project/decorators/blob/ba298d5/src/core-decorators.ts#L78">core-decorators.ts:78</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -456,7 +435,7 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> fallback: <a href="interfaces/fallback.html" class="tsd-signature-type">Fallback</a><span class="tsd-signature-symbol"> = (): void &#x3D;&gt; undefined</span></h5>
+									<h5>fallback: <a href="interfaces/fallback.html" class="tsd-signature-type" data-tsd-kind="Interface">Fallback</a><span class="tsd-signature-symbol"> = ...</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>The fallback value passed to <code>createFunctionInhibitor</code></p>
 									</div>
@@ -470,13 +449,13 @@
 					<a name="requiresguildcontext" class="tsd-anchor"></a>
 					<h3>requires<wbr>Guild<wbr>Context</h3>
 					<ul class="tsd-signatures tsd-kind-function">
-						<li class="tsd-signature tsd-kind-icon">requires<wbr>Guild<wbr>Context<span class="tsd-signature-symbol">(</span>fallback<span class="tsd-signature-symbol">?: </span><a href="interfaces/fallback.html" class="tsd-signature-type">Fallback</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">MethodDecorator</span></li>
+						<li class="tsd-signature tsd-kind-icon">requires<wbr>Guild<wbr>Context<span class="tsd-signature-symbol">(</span>fallback<span class="tsd-signature-symbol">?: </span><a href="interfaces/fallback.html" class="tsd-signature-type" data-tsd-kind="Interface">Fallback</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">MethodDecorator</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/skyra-project/decorators/blob/d1164db/src/core-decorators.ts#L95">src/core-decorators.ts:95</a></li>
+									<li>Defined in <a href="https://github.com/skyra-project/decorators/blob/ba298d5/src/core-decorators.ts#L69">core-decorators.ts:69</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -492,7 +471,7 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> fallback: <a href="interfaces/fallback.html" class="tsd-signature-type">Fallback</a><span class="tsd-signature-symbol"> = (): void &#x3D;&gt; undefined</span></h5>
+									<h5>fallback: <a href="interfaces/fallback.html" class="tsd-signature-type" data-tsd-kind="Interface">Fallback</a><span class="tsd-signature-symbol"> = ...</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>The fallback value passed to <code>createFunctionInhibitor</code></p>
 									</div>
@@ -506,13 +485,13 @@
 					<a name="requirespermission" class="tsd-anchor"></a>
 					<h3>requires<wbr>Permission</h3>
 					<ul class="tsd-signatures tsd-kind-function">
-						<li class="tsd-signature tsd-kind-icon">requires<wbr>Permission<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, fallback<span class="tsd-signature-symbol">?: </span><a href="interfaces/fallback.html" class="tsd-signature-type">Fallback</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">MethodDecorator</span></li>
+						<li class="tsd-signature tsd-kind-icon">requires<wbr>Permission<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, fallback<span class="tsd-signature-symbol">?: </span><a href="interfaces/fallback.html" class="tsd-signature-type" data-tsd-kind="Interface">Fallback</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">MethodDecorator</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/skyra-project/decorators/blob/d1164db/src/core-decorators.ts#L36">src/core-decorators.ts:36</a></li>
+									<li>Defined in <a href="https://github.com/skyra-project/decorators/blob/ba298d5/src/core-decorators.ts#L36">core-decorators.ts:36</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -534,7 +513,7 @@
 									</div>
 								</li>
 								<li>
-									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> fallback: <a href="interfaces/fallback.html" class="tsd-signature-type">Fallback</a><span class="tsd-signature-symbol"> = (): void &#x3D;&gt; undefined</span></h5>
+									<h5>fallback: <a href="interfaces/fallback.html" class="tsd-signature-type" data-tsd-kind="Interface">Fallback</a><span class="tsd-signature-symbol"> = ...</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>The fallback value passed to <code>createFunctionInhibitor</code></p>
 									</div>
@@ -549,8 +528,8 @@
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
 			<nav class="tsd-navigation primary">
 				<ul>
-					<li class="globals current ">
-						<a href="globals.html"><em>Globals</em></a>
+					<li class="current ">
+						<a href="modules.html">Exports</a>
 					</li>
 				</ul>
 			</nav>
@@ -562,38 +541,35 @@
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/inhibitor.html" class="tsd-kind-icon">Inhibitor</a>
 					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/permissionstrings.html" class="tsd-kind-icon">Permission<wbr>Strings</a>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="modules.html#applyoptions" class="tsd-kind-icon">Apply<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#createresolver" class="tsd-kind-icon">Create<wbr>Resolver</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#createresolvers" class="tsd-kind-icon">Create<wbr>Resolvers</a>
 					</li>
 					<li class=" tsd-kind-function tsd-has-type-parameter">
-						<a href="globals.html#applyoptions" class="tsd-kind-icon">Apply<wbr>Options</a>
+						<a href="modules.html#createclassdecorator" class="tsd-kind-icon">create<wbr>Class<wbr>Decorator</a>
 					</li>
 					<li class=" tsd-kind-function">
-						<a href="globals.html#createresolver" class="tsd-kind-icon">Create<wbr>Resolver</a>
+						<a href="modules.html#createfunctioninhibitor" class="tsd-kind-icon">create<wbr>Function<wbr>Inhibitor</a>
 					</li>
 					<li class=" tsd-kind-function">
-						<a href="globals.html#createresolvers" class="tsd-kind-icon">Create<wbr>Resolvers</a>
-					</li>
-					<li class=" tsd-kind-function tsd-has-type-parameter">
-						<a href="globals.html#createclassdecorator" class="tsd-kind-icon">create<wbr>Class<wbr>Decorator</a>
+						<a href="modules.html#createmethoddecorator" class="tsd-kind-icon">create<wbr>Method<wbr>Decorator</a>
 					</li>
 					<li class=" tsd-kind-function">
-						<a href="globals.html#createfunctioninhibitor" class="tsd-kind-icon">create<wbr>Function<wbr>Inhibitor</a>
+						<a href="modules.html#requiredpermissions" class="tsd-kind-icon">required<wbr>Permissions</a>
 					</li>
 					<li class=" tsd-kind-function">
-						<a href="globals.html#createmethoddecorator" class="tsd-kind-icon">create<wbr>Method<wbr>Decorator</a>
+						<a href="modules.html#requiresdmcontext" class="tsd-kind-icon">requiresDMContext</a>
 					</li>
 					<li class=" tsd-kind-function">
-						<a href="globals.html#requiredpermissions" class="tsd-kind-icon">required<wbr>Permissions</a>
+						<a href="modules.html#requiresguildcontext" class="tsd-kind-icon">requires<wbr>Guild<wbr>Context</a>
 					</li>
 					<li class=" tsd-kind-function">
-						<a href="globals.html#requiresdmcontext" class="tsd-kind-icon">requiresDMContext</a>
-					</li>
-					<li class=" tsd-kind-function">
-						<a href="globals.html#requiresguildcontext" class="tsd-kind-icon">requires<wbr>Guild<wbr>Context</a>
-					</li>
-					<li class=" tsd-kind-function">
-						<a href="globals.html#requirespermission" class="tsd-kind-icon">requires<wbr>Permission</a>
+						<a href="modules.html#requirespermission" class="tsd-kind-icon">requires<wbr>Permission</a>
 					</li>
 				</ul>
 			</nav>
@@ -604,9 +580,6 @@
 	<div class="container">
 		<h2>Legend</h2>
 		<div class="tsd-legend-group">
-			<ul class="tsd-legend">
-				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
-			</ul>
 		</div>
 	</div>
 </footer>
